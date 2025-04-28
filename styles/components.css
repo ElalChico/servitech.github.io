@@ -1,0 +1,709 @@
+/* Banner Image */
+.banner-img {
+  /* Apply base styles */
+  width: 100%;
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+  margin: 0 auto var(--header-banner-spacing) auto; 
+  object-fit: cover; 
+  transform: scale(1.0) translateX(0px) translateY(0px);
+  border-radius: var(--banner-border-radius);
+  margin-left: 0;
+}
+
+/* Banner Text */
+.banner-text-below {
+  position: relative;
+  z-index: var(--banner-text-z-index);
+  /* @tweakable Fine-tune the vertical position of the banner text relative to the banner image */
+  margin-top: calc(
+    var(--banner-text-margin-top) + 
+    var(--banner-text-margin-top-adjustment) + 
+    var(--banner-text-margin-top-extra-adjustment) + 
+    var(--banner-text-pre-spacing)
+  );
+  transform: 
+    translateY(calc(
+      var(--banner-text-vertical-lift) + 
+      var(--banner-text-vertical-offset) + 
+      var(--banner-text-vertical-translation) + 
+      var(--banner-text-lift-adjustment)
+    ));
+  /* @tweakable Controls the width of the banner text, ideally matching the pricing image */
+  width: 100%; /* Allow text to shrink below max-width */
+  max-width: var(--precios-image-max-width); /* Match the max-width of the pricing image */
+
+  /* @tweakable Horizontal margin for centering the banner text */
+  margin-left: auto;
+  margin-right: auto;
+
+  margin: var(--banner-text-margin-top) var(--banner-text-horizontal-margin) var(--banner-text-margin-bottom) var(--banner-text-horizontal-margin);
+  padding: var(--banner-text-padding);
+  background-color: var(--banner-text-bg-color);
+  border-radius: var(--banner-text-border-radius);
+  aspect-ratio: var(--banner-text-aspect-ratio);
+  text-align: var(--banner-text-text-align);
+  line-height: var(--banner-text-line-height);
+  letter-spacing: var(--banner-text-letter-spacing);
+  box-shadow: var(--banner-text-box-shadow);
+  border: var(--banner-text-border);
+  font-size: var(--banner-text-font-size);
+  backdrop-filter: blur(var(--banner-text-backdrop-blur));
+}
+
+.banner-text-below a {
+  /* @tweakable Link font size - controls the size of hyperlinks */
+  --banner-link-font-size: 1.1rem;
+
+  /* @tweakable Link font weight - controls the thickness of the link text */
+  --banner-link-font-weight: 600;
+
+  /* @tweakable Link text decoration - controls underline and other text decorations */
+  --banner-link-text-decoration: underline;
+
+  /* @tweakable Link text decoration thickness */
+  --banner-link-text-decoration-thickness: 2px;
+
+  /* @tweakable Link text decoration color - can be different from link color */
+  --banner-link-text-decoration-color: var(--banner-text-link-color);
+
+  /* @tweakable Link text decoration style - solid, dashed, dotted, etc. */
+  --banner-link-text-decoration-style: solid;
+
+  /* @tweakable Link hover decoration thickness */
+  --banner-link-hover-text-decoration-thickness: 3px;
+
+  font-size: var(--banner-link-font-size);
+  font-weight: var(--banner-link-font-weight);
+  text-decoration: var(--banner-link-text-decoration);
+  text-decoration-thickness: var(--banner-link-text-decoration-thickness);
+  text-decoration-color: var(--banner-link-text-decoration-color);
+  text-decoration-style: var(--banner-link-text-decoration-style);
+  transition: text-decoration-thickness 0.3s ease;
+}
+
+.banner-text-below a:hover {
+  text-decoration-thickness: var(--banner-link-hover-text-decoration-thickness);
+}
+
+/* WhatsApp Container */
+.whatsapp-container {
+  /* @tweakable WhatsApp button container display mode */
+  --whatsapp-container-display: flex;
+  
+  /* @tweakable Horizontal alignment of WhatsApp button */
+  --whatsapp-container-justify-content: center;
+  
+  /* @tweakable Vertical alignment of WhatsApp button */
+  --whatsapp-container-align-items: center;
+  
+  /* @tweakable Margin around WhatsApp button container */
+  --whatsapp-container-margin: var(--whatsapp-button-vertical-margin) 0;
+  
+  display: var(--whatsapp-container-display);
+  justify-content: var(--whatsapp-container-justify-content);
+  align-items: var(--whatsapp-container-align-items);
+  margin: var(--whatsapp-container-margin);
+}
+
+/* WhatsApp Button - Updated with Hover Effect */
+.whatsapp-button {
+  /* @tweakable WhatsApp button width for precise sizing control */
+  --whatsapp-button-width: 350px;
+
+  /* @tweakable WhatsApp button maximum width to prevent excessive stretching */
+  --whatsapp-button-max-width: 400px;
+
+  /* @tweakable WhatsApp button height for vertical sizing */
+  --whatsapp-button-height: 60px;
+
+  /* @tweakable Hover background color - black with slight transparency */
+  --whatsapp-button-hover-bg-color: rgba(0, 0, 0, 0.9);
+
+  /* @tweakable Hover text color - bright yellow for high contrast */
+  --whatsapp-button-hover-text-color: #ffff00;
+
+  /* @tweakable Hover border color - maintain green border or change */
+  --whatsapp-button-hover-border-color: #32cd32;
+
+  /* @tweakable Hover shadow effect intensity */
+  --whatsapp-button-hover-shadow: 0 8px 25px rgba(50, 205, 50, 0.4);
+
+  /* @tweakable Hover scale effect to add depth */
+  --whatsapp-button-hover-scale: 1.05;
+
+  /* @tweakable Transition duration for smooth hover effects */
+  --whatsapp-button-hover-transition-duration: 0.3s;
+
+  /* @tweakable WhatsApp button primary green border color */
+  --whatsapp-button-border-color: #32cd32;
+
+  /* @tweakable WhatsApp button text color in green */
+  --whatsapp-button-text-color: #32cd32;
+
+  /* @tweakable WhatsApp button background color - keep black */
+  --whatsapp-button-bg-color: #000000;
+
+  /* @tweakable WhatsApp button border width for prominence */
+  --whatsapp-button-border-width: 2px;
+
+  /* @tweakable WhatsApp button border style - solid, dashed, etc. */
+  --whatsapp-button-border-style: solid;
+
+  /* @tweakable WhatsApp button border radius */
+  --whatsapp-button-border-radius: 25px;
+
+  width: var(--whatsapp-button-width);
+  max-width: var(--whatsapp-button-max-width);
+  height: var(--whatsapp-button-height);
+
+  background-color: var(--whatsapp-button-bg-color);
+  color: var(--whatsapp-button-text-color);
+  border-radius: var(--whatsapp-button-border-radius);
+  border: var(--whatsapp-button-border-width) var(--whatsapp-button-border-style) var(--whatsapp-button-border-color);
+  
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  transition: all var(--whatsapp-button-hover-transition-duration) ease;
+  position: relative;
+}
+
+.whatsapp-button:hover {
+  background-color: var(--whatsapp-button-hover-bg-color);
+  color: var(--whatsapp-button-hover-text-color);
+  border-color: var(--whatsapp-button-hover-border-color);
+  box-shadow: var(--whatsapp-button-hover-shadow);
+  transform: scale(var(--whatsapp-button-hover-scale));
+}
+
+.whatsapp-icon-container {
+  /* @tweakable Logo container display mode */
+  --whatsapp-logo-container-display: flex;
+
+  /* @tweakable Logo container alignment */
+  --whatsapp-logo-container-align-items: center;
+  --whatsapp-logo-container-justify-content: center;
+
+  display: var(--whatsapp-logo-container-display);
+  align-items: var(--whatsapp-logo-container-align-items);
+  justify-content: var(--whatsapp-logo-container-justify-content);
+  position: var(--whatsapp-logo-position, relative);
+}
+
+.whatsapp-logo {
+  /* @tweakable Logo width - increase logo size proportionally */
+  --whatsapp-logo-width: 45px;
+
+  /* @tweakable Logo height - increase logo size proportionally */
+  --whatsapp-logo-height: 45px;
+
+  /* @tweakable Logo scale factor - fine-tune sizing */
+  --whatsapp-logo-scale: 1.0;
+
+  /* @tweakable Logo margin from text */
+  --whatsapp-logo-margin-right: 10px;
+
+  /* @tweakable Logo scaling on hover */
+  --whatsapp-logo-hover-scale: 1.1;
+
+  /* @tweakable Logo transition for smooth scaling */
+  --whatsapp-logo-hover-transition: all 0.3s ease;
+
+  width: calc(var(--whatsapp-logo-width) * var(--whatsapp-logo-scale));
+  height: calc(var(--whatsapp-logo-height) * var(--whatsapp-logo-scale));
+  object-fit: contain;
+  opacity: var(--whatsapp-logo-opacity);
+  border-radius: var(--whatsapp-logo-border-radius);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+  margin-right: var(--whatsapp-logo-margin-right);
+  transition: var(--whatsapp-logo-hover-transition);
+}
+
+.whatsapp-button:hover .whatsapp-logo {
+  transform: scale(var(--whatsapp-logo-hover-scale));
+}
+
+.whatsapp-button svg {
+  /* @tweakable WhatsApp icon size */
+  --whatsapp-icon-size: 24px;
+
+  width: var(--whatsapp-icon-size);
+  height: var(--whatsapp-icon-size);
+}
+
+/* Terminal Overlay and Content */
+.terminal-overlay {
+  position: absolute;
+  left: var(--terminal-horizontal-offset);
+  width: var(--terminal-width-percentage);
+  top: var(--terminal-vertical-position);
+  background-color: rgba(1, 19, 36, 0.4); /* Fondo con mayor transparencia */
+  border: 1px solid rgba(0, 224, 255, 0.3); /* Borde con mayor transparencia */
+  border-radius: var(--terminal-border-radius);
+  padding: var(--terminal-padding);
+  box-shadow: 0 0 10px rgba(1, 224, 204, 0.3);
+  z-index: 10;
+}
+
+.terminal-content {
+  text-align: left;
+  padding-left: 10px;
+  color: rgba(var(--terminal-text-color-r), var(--terminal-text-color-g), var(--terminal-text-color-b), var(--terminal-text-color-opacity));
+  opacity: var(--terminal-text-color-opacity);
+  text-shadow: 0 0 calc(10px * var(--terminal-text-glow-intensity)) var(--terminal-text-glow-color);
+  font-family: var(--base-font-family), var(--fallback-font-family);
+  /* @tweakable Terminal base font size - controls overall text size */
+  --terminal-font-size-multiplier: 1.2;
+
+  /* Multiply the base terminal font size by the multiplier */
+  font-size: calc(var(--terminal-font-size) * var(--terminal-font-size-multiplier));
+  line-height: calc(var(--terminal-line-height) * var(--terminal-font-size-multiplier));
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.terminal-content .terminal-caret {
+  /* @tweakable Terminal cursor base width */
+  --terminal-cursor-base-width: 12px;
+  
+  /* @tweakable Terminal cursor base height */
+  --terminal-cursor-base-height: 20px;
+  
+  /* @tweakable Terminal cursor thickness multiplier */
+  --terminal-cursor-thickness-multiplier: 1.5;
+  
+  /* @tweakable Terminal cursor border radius */
+  --terminal-cursor-border-radius: 3px;
+  
+  /* @tweakable Terminal cursor opacity */
+  --terminal-cursor-opacity: 1.0;
+  
+  /* @tweakable Cursor blink animation speed */
+  --terminal-cursor-blink-speed: 500ms;
+
+  display: inline-block;
+  width: calc(var(--terminal-cursor-base-width) * var(--terminal-cursor-thickness-multiplier));
+  height: calc(var(--terminal-cursor-base-height) * var(--terminal-cursor-thickness-multiplier));
+  background-color: currentColor;  /* Inherit color from parent text */
+  border-radius: var(--terminal-cursor-border-radius);
+  opacity: var(--terminal-cursor-opacity);
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink var(--terminal-cursor-blink-speed) ease infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* About Section Presentation Frame */
+.presentation-frame {
+  width: 100%;
+  max-width: 1000px; /* Aumentado de 800px */
+  min-width: var(--presentation-frame-min-width);
+  padding: 2rem; /* Añadido padding extra */
+  font-size: 1.1em; /* Aumentado tamaño de fuente */
+  background-color: var(--presentation-frame-bg-color);
+  border: var(--presentation-frame-border-width) solid var(--presentation-frame-border-color);
+  border-radius: var(--presentation-frame-border-radius);
+  box-shadow: var(--presentation-frame-box-shadow);
+  overflow: hidden; /* Ensures content and header respect border radius */
+  margin: 0 auto; /* Center the frame within the container */
+  display: flex; /* Layout header and content */
+  flex-direction: column;
+}
+
+.frame-header {
+  height: var(--frame-header-height);
+  background-color: var(--frame-header-bg-color);
+  border-bottom: var(--frame-header-border-bottom-width) solid var(--frame-header-border-bottom-color);
+  display: flex;
+  align-items: center;
+  padding: var(--frame-header-padding);
+  position: relative;
+  z-index: 1;
+}
+
+.frame-controls {
+  display: flex;
+  gap: var(--frame-control-button-spacing);
+  margin-right: auto; /* Pushes title to the right */
+}
+
+.control-btn {
+  display: block;
+  width: var(--frame-control-button-size);
+  height: var(--frame-control-button-size);
+  border-radius: 50%;
+  /* Simple colored circles for now, could be replaced with SVGs */
+}
+
+.control-btn.close { background-color: var(--frame-control-colors, #ff5f56) } /* Red */
+.control-btn.minimize { background-color: nth(var(--frame-control-colors, #ff5f56 #ffbd2e #27c93f), 2) } /* Yellow */
+.control-btn.maximize { background-color: nth(var(--frame-control-colors, #ff5f56 #ffbd2e #27c93f), 3) } /* Green */
+
+.frame-title {
+  color: var(--frame-title-color);
+  font-size: var(--frame-title-font-size);
+  font-weight: var(--frame-title-font-weight);
+  text-align: center; /* Center title within available space */
+  flex-grow: 1; /* Allows title to take up remaining space */
+  /* Hide the controls text */
+  pointer-events: none; /* Don't interfere with control clicks if they were interactive */
+  user-select: none; /* Prevent text selection */
+}
+
+.frame-content {
+  background-color: transparent; /* Background is on the frame */
+  border: none; /* Border is on the frame */
+  border-image: none;
+  border-radius: 0 0 var(--frame-content-border-radius) var(--frame-content-border-radius); /* Only apply bottom radius */
+  box-shadow: none; /* Shadow is on the frame */
+  padding: 2rem 2.5rem; /* Aumentado el padding */
+  position: relative;
+  overflow: hidden;
+  z-index: 0; /* Below header */
+  display: flex;
+  flex-direction: column;
+  gap: var(--frame-content-gap); /* Apply gap between internal elements */
+
+  /* Remove the gradient overlay pseudo-element from the old about-content */
+  &::before {
+    content: none;
+  }
+
+  /* About content font styles moved from .about-content */
+  --about-content-font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --about-content-text-color: var(--text-light);
+  --about-content-line-height: 1.6;
+  --about-content-font-size: 1rem;
+  --about-content-font-weight: 400;
+  --about-content-letter-spacing: 0.5px;
+
+  font-family: var(--about-content-font-family);
+  color: var(--about-content-text-color);
+  line-height: var(--about-content-line-height);
+  font-size: var(--about-content-font-size);
+  font-weight: var(--about-content-font-weight);
+  letter-spacing: var(--about-content-letter-spacing);
+}
+
+.about-intro, .about-future-goals {
+  /* @tweakable Intro and future goals text opacity */
+  --about-section-text-opacity: 0.9;
+
+  opacity: var(--about-section-text-opacity);
+}
+
+.experience-title {
+  /* @tweakable Experience section title font family */
+  --experience-title-font-family: 'Arial', 'Helvetica Neue', sans-serif;
+  
+  /* @tweakable Experience section title font size */
+  --experience-title-font-size: 1.5rem;
+  
+  /* @tweakable Experience section title color */
+  --experience-title-color: var(--accent-secondary);
+  
+  /* @tweakable Experience section title font weight */
+  --experience-title-font-weight: 600;
+  
+  /* @tweakable Experience section title letter spacing */
+  --experience-title-letter-spacing: 0.5px;
+  
+  font-family: var(--experience-title-font-family);
+  font-size: var(--experience-title-font-size);
+  color: var(--experience-title-color);
+  font-weight: var(--experience-title-font-weight);
+  letter-spacing: var(--experience-title-letter-spacing);
+  margin-bottom: 16px;
+}
+
+.experience-list {
+  /* @tweakable List item text base font size */
+  --experience-list-text-size: 1rem;
+
+  /* @tweakable List item text font weight */
+  --experience-list-text-weight: 400;
+
+  /* @tweakable Gap between list items */
+  --experience-list-item-gap: 16px; 
+
+  /* @tweakable Emoji size relative to text */
+  --experience-list-emoji-size-multiplier: 1.2; 
+
+  /* @tweakable Emoji right margin for spacing */
+  --experience-list-emoji-margin-right: 10px; 
+
+  /* @tweakable Text color for list items */
+  --experience-list-text-color: var(--text-medium);
+
+  font-size: var(--experience-list-text-size);
+  font-weight: var(--experience-list-text-weight);
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--experience-list-item-gap);
+}
+
+.experience-list li {
+  /* @tweakable List item default background color */
+  --experience-list-item-default-bg: rgba(1, 224, 204, 0.08); /* Slightly more distinct */
+
+  /* @tweakable List item border color */
+  --experience-list-item-border-color: rgba(1, 224, 204, 0.2);
+
+  /* @tweakable List item border width */
+  --experience-list-item-border-width: 1px;
+
+  /* @tweakable List item border style */
+  --experience-list-item-border-style: solid;
+
+  /* @tweakable List item border radius */
+  --experience-list-item-border-radius: 8px;
+
+  /* @tweakable List item padding */
+  --experience-list-item-padding: 12px 16px;
+
+  /* @tweakable List item margin */
+  --experience-list-item-margin: 8px 0; /* Re-apply margin if needed, but gap is preferred */
+
+  /* @tweakable List item box shadow */
+  --experience-list-item-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* @tweakable List item text color */
+  --experience-list-item-text-color: var(--text-medium); /* Ensure text is readable */
+
+  /* @tweakable List item transition properties (remove transform from transition) */
+  --experience-list-item-transition: all 0.3s ease;
+
+  /* @tweakable List item background gradient overlay */
+  --experience-list-item-gradient: linear-gradient(45deg, rgba(1, 224, 204, 0.05), rgba(103, 252, 255, 0.05));
+
+  /* @tweakable List item background gradient opacity */
+  --experience-list-item-gradient-opacity: 0.5;
+
+  display: flex;
+  align-items: center;
+  background-color: var(--experience-list-item-default-bg); /* Use the default background variable */
+  border: var(--experience-list-item-border-width) var(--experience-list-item-border-style) var(--experience-list-item-border-color);
+  border-radius: var(--experience-list-item-border-radius);
+  padding: var(--experience-list-item-padding);
+  margin: var(--experience-list-item-margin); /* Use margin if gap doesn't suffice */
+  box-shadow: var(--experience-list-item-box-shadow);
+  color: var(--experience-list-item-text-color);
+  transition: var(--experience-list-item-transition); /* Use the transition variable */
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--experience-list-item-gradient);
+    z-index: -1;
+    opacity: var(--experience-list-item-gradient-opacity);
+  }
+
+  &:hover {
+    /* @tweakable List item hover background color */
+    --experience-list-item-hover-bg: rgba(1, 224, 204, 0.1);
+
+    /* @tweakable List item hover border color */
+    --experience-list-item-hover-border: rgba(1, 224, 204, 0.4);
+
+    /* @tweakable List item hover text color */
+    --experience-list-item-hover-text: #01e0cc; /* Accent color */
+
+    /* @tweakable List item hover transform (set to none to remove animation) */
+    --experience-list-item-hover-transform: none;
+
+    background-color: var(--experience-list-item-hover-bg);
+    border-color: var(--experience-list-item-hover-border);
+    color: var(--experience-list-item-hover-text);
+    transform: var(--experience-list-item-hover-transform); /* Use the hover transform variable */
+  }
+}
+
+.experience-list li::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  background-color: rgba(1, 224, 204, 0.1);
+  border-radius: 50%;
+  padding: 10px;
+  font-size: calc(var(--experience-list-text-size) * 1.5);
+  color: var(--accent-primary);
+}
+
+/* Styles for the new consultoria box */
+.recuadro-consultoria {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #000;
+  border: 4px solid #fff;
+  outline: 4px solid #000;
+  box-shadow: 
+    0 0 0 8px #000,
+    inset 0 0 20px rgba(0, 255, 255, 0.5);
+  color: #fff;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  image-rendering: pixelated;
+  text-shadow: 2px 2px #000;
+}
+
+.recuadro-consultoria h2 {
+  font-size: 1.5em;
+  margin-bottom: 2rem;
+  color: #0f0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 
+    2px 2px #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0 0 10px #0f0;
+}
+
+.recuadro-consultoria p {
+  font-size: 0.9em;
+  line-height: 1.8;
+  color: #fff;
+  margin-bottom: 1.5em;
+  text-shadow: 2px 2px #000;
+}
+
+.recuadro-consultoria .destacado {
+  color: #ff0;
+  font-size: 1.1em;
+  margin: 1.5em 0;
+  text-align: center;
+  animation: blink 1s infinite;
+}
+
+.recuadro-consultoria .botones-accion {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  justify-content: center;
+}
+
+.recuadro-consultoria .boton {
+  padding: 15px 30px;
+  background: #000;
+  border: 3px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  text-align: center;
+  min-width: 200px;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.recuadro-consultoria .boton:before {
+  content: '►';
+  position: absolute;
+  left: 10px;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.recuadro-consultoria .boton:hover:before {
+  opacity: 1;
+}
+
+.recuadro-consultoria .consultar {
+  border-color: #0f0;
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0;
+}
+
+.recuadro-consultoria .solicitar {
+  border-color: #f0f;
+  color: #f0f;
+  text-shadow: 0 0 5px #f0f;
+}
+
+.recuadro-consultoria .boton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px currentColor;
+  padding-left: 40px;
+}
+
+.recuadro-consultoria .nota {
+  font-size: 0.7em;
+  color: #888;
+  margin-top: 2rem;
+  text-align: center;
+  font-style: italic;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.5; }
+}
+
+@media (max-width: 768px) {
+  .recuadro-consultoria {
+    margin: 1.5rem 0.5rem;
+    padding: 2.5rem;
+    min-width: 95vw; /* Aumentado de 90vw a 95vw */
+    font-size: 1.2em; /* Aumentado de 1.1em a 1.2em */
+    max-width: 100vw;
+  }
+
+  .presentation-frame {
+    min-width: 98vw; /* Aumentado de 95vw */
+    margin: 1rem 0.2rem;
+    padding: 2rem;
+    font-size: 1.3em; /* Aumentado tamaño de fuente en móvil */
+  }
+  
+  .about-container,
+  #info-box-container {
+    min-width: 95vw !important; /* Aumentado de 90vw a 95vw */
+    max-width: 100vw !important;
+    margin: 0.5rem auto !important;
+  }
+  
+  .recuadro-consultoria .botones-accion {
+    flex-direction: column;
+    gap: 2rem; /* Aumentado el espacio entre botones */
+  }
+  
+  .recuadro-consultoria .boton {
+    width: 100%;
+    padding: 20px 30px; /* Aumentado el padding vertical */
+    font-size: 1.1em; /* Aumentado el tamaño de fuente de los botones */
+  }
+
+  .frame-content {
+    padding: 2rem; /* Aumentado el padding del contenido */
+  }
+}
+
+/* Banner Container */
+.banner-container {
+  position: relative;
+  padding: 1rem;
+  border: 2px solid #00e0ff; /* Borde azul */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 224, 255, 0.3); /* Sombra */
+  background: rgba(1, 19, 36, 1); /* Fondo actualizado */
+}

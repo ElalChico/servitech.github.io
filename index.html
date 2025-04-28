@@ -1,0 +1,921 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>ServiTech Patagonia</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cascadia+Code&family=Montserrat:wght@700;400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Import external stylesheets -->
+  <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+  <style>
+    /* Elimina cualquier borde o sombra divisoria entre header y main */
+    .banner-container,
+    .whatsapp-container,
+    .about-section,
+    .about-container {
+      border-bottom: none !important;
+      box-shadow: none !important;
+      background-image: none !important;
+    }
+    header {
+      border-bottom: none !important;
+      box-shadow: none !important;
+    }
+    main {
+      border-top: none !important;
+      box-shadow: none !important;
+    }
+    /* Solución: Asegura que .whatsapp-container no tenga overflow ni recorte */
+    .whatsapp-container {
+      overflow: visible !important;
+      margin-bottom: 2.5rem !important;
+      padding-bottom: 0 !important;
+      border: none !important;
+    }
+    /* Si el botón sigue cortado, fuerza altura automática */
+    .whatsapp-button,
+    .whatsapp-icon-container {
+      height: auto !important;
+      overflow: visible !important;
+    }
+    /* Estilos aumentados para el botón de WhatsApp */
+    .whatsapp-button {
+        display: flex !important;
+        align-items: center !important;
+        gap: 20px !important;
+        padding: 25px 80px !important; /* Aumentado el padding horizontal */
+        font-size: 1.8em !important;
+        border-radius: 15px !important; /* Reactivado el border-radius */
+        min-width: 500px !important; /* Añadido ancho mínimo */
+        justify-content: center !important; /* Centrado el contenido */
+        margin: 0 auto !important; /* Centrado el botón */
+    }
+
+    .whatsapp-icon-container {
+        width: 150px !important;  /* Aumentado a 150px */
+        height: 150px !important; /* Aumentado a 150px */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 10px !important; /* Aumentado el padding */
+    }
+
+    .whatsapp-logo {
+        width: 45px !important;
+        height: 45px !important;
+        object-fit: contain !important;
+        max-width: 45px !important;
+        transform: none !important;
+    }
+
+    /* Eliminar scroll en mensaje de recomendación */
+    div[style*="margin: 3rem auto"] {
+        overflow: hidden !important;
+        word-wrap: break-word !important;
+    }
+
+    .botones-accion {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 30px !important; /* Aumentado el espacio entre botones */
+        margin: 3rem 0 !important; /* Aumentado el margen */
+    }
+
+    .botones-accion .boton {
+        padding: 30px 60px !important; /* Aumentado el padding */
+        font-size: 1.6em !important; /* Aumentado el tamaño de fuente */
+        border-radius: 15px !important; /* Reactivado el border-radius */
+        text-decoration: none !important;
+        color: white !important;
+        transition: all 0.3s ease !important;
+        min-width: 300px !important; /* Aumentado el ancho mínimo */
+        text-align: center !important;
+    }
+
+    .botones-accion .consultar {
+        background: #700a2c !important; /* Naranja brillante */
+        box-shadow: 0 0 20px rgba(255, 95, 0, 0.3) !important;
+        border: 2px solid #ff5f00 !important;
+    }
+
+    .botones-accion .solicitar {
+        background: #4d00ff !important; /* Violeta brillante */
+        box-shadow: 0 0 20px rgba(77, 0, 255, 0.3) !important;
+        border: 2px solid #4d00ff !important;
+    }
+
+    .botones-accion .boton:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 5px 25px rgba(255, 255, 255, 0.5) !important;
+        filter: brightness(1.3) !important;
+    }
+
+    /* Mensaje de advertencia */
+    div[style*="margin: 3rem auto"] {
+        border-radius: 0px !important;
+    }
+
+    /* Recuadro de consultoría */
+    .recuadro-consultoria {
+        border-radius: 0px !important;
+        border: none !important; /* Eliminado el borde aqua */
+    }
+
+    /* Frame de presentación */
+    .presentation-frame {
+        border-radius: 0px !important;
+        border: none !important; /* Eliminado el borde aqua */
+    }
+
+    /* Stats widget */
+    #stats-widget {
+        border-radius: 0px !important;
+        border: none !important; /* Eliminado el borde aqua */
+    }
+
+    table.sheet0 {
+        border: none !important; /* Eliminado el borde aqua */
+    }
+
+    /* Reset de bordes */
+    html, body {
+        border: none !important;
+    }
+
+    * {
+        border-top-color: transparent !important;
+        border-right-color: transparent !important;
+        border-bottom-color: transparent !important;
+        border-left-color: transparent !important;
+    }
+
+    /* Ajustes responsivos mejorados */
+    @media (max-width: 768px) {
+      /* Contenedores principales */
+      .banner-container,
+      .whatsapp-container,
+      #stats-widget,
+      .banner-text-below,
+      div[style*="margin: 3rem auto"],
+      .recuadro-consultoria,
+      .presentation-frame {
+        width: 95vw !important;
+        padding: 1rem !important;
+        margin: 1rem auto !important;
+      }
+
+      /* Imagen del banner */
+      .banner-img {
+        width: 95vw !important;
+        height: auto !important;
+      }
+
+      /* Widget de stats */
+      #stats-widget {
+        font-size: 0.8em !important;
+        gap: 0.4rem !important;
+        padding: 0.5em 0.8em !important;
+        overflow-x: auto !important;
+      }
+
+      /* Texto animado */
+      #animated-text {
+        font-size: 0.9em !important;
+      }
+
+      /* Botón de WhatsApp */
+      .whatsapp-button {
+        min-width: unset !important;
+        width: 90% !important;
+        padding: 15px !important;
+        font-size: 1.2em !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+      }
+
+      .whatsapp-icon-container {
+        width: 70px !important;
+        height: 70px !important;
+      }
+      
+      /* Botones de acción */
+      .botones-accion {
+        flex-direction: column !important;
+        gap: 15px !important;
+      }
+
+      .botones-accion .boton {
+        width: 90% !important;
+        min-width: unset !important;
+        padding: 15px !important;
+        font-size: 1.1em !important;
+      }
+
+      /* Textos y contenido */
+      .banner-text-below,
+      .recuadro-consultoria p,
+      .presentation-frame p {
+        font-size: 1em !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+      }
+
+      h2, h3, h4 {
+        font-size: 1.2em !important;
+      }
+
+      /* Mensajes y advertencias */
+      div[style*="margin: 3rem auto"] p {
+        font-size: 1em !important;
+        padding: 0.5rem !important;
+      }
+
+      /* Listas */
+      ul {
+        padding-left: 1rem !important;
+      }
+
+      li {
+        margin-bottom: 0.8rem !important;
+      }
+
+      /* Márgenes y espaciado general */
+      * {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Ajustes para el correo en móvil */
+      div[style*="display: flex"] {
+        padding: 1rem !important;
+      }
+      
+      div[style*="overflow-x: auto"] {
+        margin: 0 -0.5rem !important;
+      }
+      
+      div[style*="overflow-x: auto"] p {
+        font-size: 0.9em !important;
+        padding: 0.5rem !important;
+      }
+
+      /* Ajustes para tamaños de fuente en "Mensaje para usted" */
+      .presentation-frame .frame-content {
+          font-size: 0.85em !important; /* Reducido de 1.25em a 0.85em */
+          line-height: 1.4 !important;
+          padding: 1rem !important;
+      }
+
+      .presentation-frame .frame-content h3 {
+          font-size: 1.1em !important;
+          margin-top: 1rem !important;
+      }
+
+      .presentation-frame .frame-content h4 {
+          font-size: 1em !important;
+      }
+
+      .presentation-frame .frame-content p,
+      .presentation-frame .frame-content ul,
+      .presentation-frame .frame-content li {
+          font-size: 0.9em !important;
+          line-height: 1.4 !important;
+          margin-bottom: 0.8rem !important;
+      }
+
+      .presentation-frame .frame-content strong {
+          font-size: inherit !important;
+      }
+    }
+
+    /* Ajustes para pantallas muy pequeñas */
+    @media (max-width: 380px) {
+      #stats-widget {
+        font-size: 0.7em !important;
+      }
+
+      .whatsapp-button {
+        font-size: 1em !important;
+      }
+
+      .botones-accion .boton {
+        font-size: 1em !important;
+      }
+
+      .terminal-content.terminal-desktop {
+        font-size: 4px !important; /* Fuente aún más pequeña para pantallas muy pequeñas */
+        line-height: 0.7 !important;
+      }
+    }
+
+    /* Estilos para el iframe */
+    iframe {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important; /* Ajustar la altura automáticamente */
+      overflow: auto !important;
+      transform: scale(1.0); /* Asegurar que no haya zoom inicial */
+      transform-origin: top left;
+    }
+
+    /* Estilos para el contenedor de la tabla de precios */
+    #tabla-precios {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    @media (max-width: 768px) {
+      .presentation-frame {
+        /* Reducir padding y márgenes */
+        padding: 0.5rem !important;
+        margin: 0.5rem auto !important;
+        /* Reducir sombras */
+        box-shadow: none !important;
+      }
+
+      /* Selector más específico para forzar el tamaño de fuente */
+      .presentation-frame .frame-content[style*="font-size"] {
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+      }
+
+      .presentation-frame .frame-content h3[style*="color"] {
+        font-size: 13px !important;
+        margin: 8px 0 !important;
+      }
+
+      .presentation-frame .frame-content h4[style*="color"] {
+        font-size: 12px !important;
+        margin: 8px 0 !important;
+      }
+
+      .presentation-frame .frame-content p,
+      .presentation-frame .frame-content ul,
+      .presentation-frame .frame-content li {
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 5px !important;
+      }
+
+      .presentation-frame .frame-content strong {
+        font-size: inherit !important;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .presentation-frame .frame-content[style*="font-size"] {
+        font-size: 10px !important;
+      }
+    }
+
+    /* Ajustes específicos para móviles */
+    @media (max-width: 768px) {
+    body {
+      margin: 0 !important; /* Eliminar margen del body */
+      padding: 0 !important; /* Eliminar padding del body */
+    }
+
+    .banner-container {
+      padding: 0 !important; /* Eliminar padding del banner container */
+      margin: 0 !important; /* Eliminar margen del banner container */
+    }
+
+    .banner-img {
+      width: 100% !important; /* Ajustar ancho de la imagen al 100% */
+      height: auto !important; /* Ajustar altura automáticamente */
+      display: block !important; /* Eliminar espacio adicional debajo de la imagen */
+    }
+
+    .terminal-overlay {
+      width: 95% !important; /* Aumentar ancho del contenedor */
+      max-width: 95% !important; /* Limitar ancho máximo */
+      line-height: 1.2 !important; /* Reducir espaciado entre líneas */
+      padding: 10px !important; /* Reducir padding */
+      margin: 10px auto !important; /* Centrar el overlay */
+      background: rgba(0, 0, 0, 0.9) !important; /* Fondo solido en móvil */
+      border-radius: 0 !important; /* Eliminar bordes redondeados */
+    }
+
+    .terminal-overlay .terminal-content {
+      padding: 5px !important; /* Reducir padding interno */
+      overflow-wrap: break-word !important; /* Ajustar texto largo */
+    }
+  }
+
+  @media (max-width: 380px) {
+    .terminal-overlay {
+      width: 90% !important; /* Aún más pequeño en pantallas muy pequeñas */
+      max-width: 90% !important;
+    }
+
+    .terminal-overlay .terminal-content {
+      padding: 1px !important; /* Reducir padding interno */
+    }
+  }
+
+  /* Ajuste de transparencia en móvil */
+  @media (max-width: 768px) {
+    .terminal-content.terminal-desktop {
+      background: rgba(0, 0, 0, 0.8) !important; /* Aumenta la opacidad del fondo */
+      border-radius: 0 !important; /* Eliminar bordes redondeados */
+    }
+
+    .presentation-frame .frame-content h4 {
+      font-size: 0.6em !important; /* Reducir tamaño de fuente en móvil */
+      color: #73ff00
+    }
+  }
+  </style>
+  <style>
+    @media (max-width: 768px) {
+      .recomendacion-container {
+        position: relative !important; /* Asegura que el contenedor sea relativo */
+        top: -40rem !important; /* Este valor esta bien, evita modificarlo */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="banner-container" style="position: relative !important;">
+      <div class="terminal-overlay" style="
+  display: flex !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0 !important;
+  padding: 20px !important;
+  z-index: 100 !important;
+  width: 80% !important; /* Aumentado el ancho */
+  height: 10% !important; /* Reducido a 10% para menos altura */
+  background: rgba(0, 0, 0, 0.212)2) !important; 
+  transform-origin: top left !important;
+  transform: scale(1) !important;
+">
+        <div class="terminal-content terminal-desktop" id="termContent" style="
+  font-family: 'Cascadia Code', monospace !important;
+  line-height: 1.0 !important;
+  padding: 10px !important;
+  background: rgba(0, 0, 0, 0.075) !important;   /* aqui se controla la trasparencia de la terminal */
+  color: #00c3ff !important;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.685) !important;
+  border: none !important;
+  overflow: hidden !important;
+  white-space: pre-wrap !important;
+  backdrop-filter: blur(2px) !important;
+  width: 100% !important;
+  height: 100% !important;
+  flex: 1 !important;
+"></div>
+      </div>
+      <img src="banner.png" alt="ServiTech Banner" class="banner-img"/>
+      <!-- Animación de carga pequeña tipo terminal -->
+      <div id="loading-animation" style="display:flex;align-items:center;gap:0.7rem;margin:1.2rem 0 0.7rem 0;font-family:'Cascadia Code',monospace;font-size:1.1em;color:#00e0ff;">
+        <span style="letter-spacing:1px;">[ Cargando&nbsp;</span>
+        <span id="dots" style="display:inline-block;width:1.5em;text-align:left;">...</span>
+        <span>]</span>
+      </div>
+      <!-- Mini widget horizontal tipo terminal para stats "cool" encuadrado y en una sola línea -->
+      <div id="stats-widget" style="
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        margin: 1.2rem 0 1.2rem 0;
+        font-family: 'Cascadia Code', monospace;
+        font-size: 1.05em;
+        background: #181c24;
+        border: 2px solid #00e0ff;
+        border-radius: 0px !important;
+        box-shadow: 0 2px 12px 0 #05caca22;
+        padding: 0.7em 1.5em;
+        color: #e0e0e0;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        white-space: nowrap;
+      ">
+        <span style="color:#00e0ff;">| TEMP:</span>
+        <span id="cpu-temp" style="font-weight:bold;">--°C</span>
+        <span style="color:#00e0ff;">| RAM:</span>
+        <span id="ram-usage" style="font-weight:bold;">--%</span>
+        <span style="display:none;color:#00e0ff;">| DISK:</span>
+        <span id="disk-usage" style="display:none;font-weight:bold;">--%</span>
+        <span style="color:#00e0ff;">| NET:</span>
+        <span id="net-up" style="font-weight:bold;">↑ -- KB/s</span>
+        <span id="net-down" style="font-weight:bold;">↓ -- KB/s</span>
+        <span style="color:#00e0ff;">| GPU:</span>
+        <span id="gpu-usage" style="font-weight:bold;">--%</span>
+      </div>
+
+      <!-- Agregado texto animado -->
+      <div style="
+        text-align: center;
+        margin: 1.5rem auto;
+        font-family: 'Ubuntu Mono', 'Consolas', monospace;
+        color: #00e0ff;
+        text-shadow: 0 0 10px rgba(0,224,255,0.5);
+        font-size: 1.15em;
+        letter-spacing: 1px;
+        background: rgba(0,224,255,0.05);
+        padding: 0.5em;
+      ">
+        <span id="animated-text" style="font-variant-ligatures: none;"></span>
+        <span class="cursor" style="
+          display: inline-block;
+          width: 6px;
+          height: 1.1em;
+          background: #00e0ff;
+          margin-left: 5px;
+          animation: blink 1s infinite;
+          opacity: 0.8;
+        "></span>
+      </div>
+
+      <script>
+        const text = "ServiTech Patagonia, Valcheta";
+        let index = 0;
+        const animatedText = document.getElementById('animated-text');
+
+        function typeText() {
+          if (index < text.length) {
+            animatedText.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeText, 620); // Reducido el tiempo para que sea más rápido
+          } else {
+            // Aumentar el tiempo antes de ocultar el cuadro
+            setTimeout(() => {
+              const terminalOverlay = document.querySelector('.terminal-overlay');
+              if (terminalOverlay) {
+                terminalOverlay.style.display = 'none'; // Ocultar el cuadro
+              }
+            }, 3000); // 3 segundos después de terminar de escribir
+          }
+        }
+
+        // Asegurarse de que el texto se inicialice correctamente
+        document.addEventListener("DOMContentLoaded", () => {
+          animatedText.textContent = ""; // Reiniciar el contenido
+          typeText();
+        });
+      </script>
+
+      <!-- Nuevo cuadro de aviso de precios -->
+      <div style="
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+        background: rgba(0, 255, 13, 0.15);
+        border: 2px solid #0cff00;
+        border-radius: 0;
+        text-align: left;
+        box-shadow: 0 0 20px rgba(0, 255, 13, 0.2);
+        max-width: 900px;
+      ">
+        <h3 style="
+          color: #0cff00;
+          font-weight: bold;
+          font-size: 1.4em;
+          margin-bottom: 1.5rem;
+          font-family: 'Press Start 2P', monospace;
+          text-shadow: 0 0 10px rgba(0, 255, 13, 0.3);
+          text-align: center;
+        ">
+          Aviso Importante sobre Precios
+        </h3>
+        
+        <p style="
+          color: #fff;
+          margin-bottom: 1.5rem;
+          font-family: 'Cascadia Code', monospace;
+          font-size: 1.1em;
+          line-height: 1.5;
+        ">
+          Nos vemos obligados a modificar y actualizar nuestros precios conforme a las condiciones del mercado.
+        </p>
+
+        <p style="
+          color: #fff;
+          font-family: 'Cascadia Code', monospace;
+          font-size: 1.1em;
+          line-height: 1.5;
+        ">
+          <strong style="color: #0cff00;">SERVICIO PRIORITARIO:</strong> Contamos con servicio prioritario para atención inmediata, el cual tiene un costo adicional. Este servicio está disponible tanto para local como para domicilio.
+        </p>
+      </div>
+
+      <div class="banner-text-below">
+        Lo invitamos a conocer nuestros servicios y sus tarifas. Además, al contrastar
+        nuestros precios con los oficiales vigentes en la provincia de Río Negro,
+        podrá apreciar que los nuestros son sustancialmente más bajos, evidenciando
+        nuestro compromiso con la accesibilidad y la equidad de servicios.
+        Si desean, pueden ver la lista de precios oficiales publicados en la
+        <a href="https://vidainformatica.com.ar/listado-de-precios-zona-6/">página Vida Informática</a> 
+        o si prefiere, puede verlo en este
+        <a href="https://vidainformatica.com.ar/wp-content/uploads/2025/04/48-Z6RNGR.pdf">pdf</a>.
+      </div>
+      <div id="tabla-precios" class="precio-desktop"></div>
+      <div class="whatsapp-container">
+  <a href="https://wa.me/5492944693956" target="_blank" class="whatsapp-button">
+    <div class="whatsapp-icon-container">
+      <img src="logo w.png" alt="WhatsApp Logo" class="whatsapp-logo">
+    </div>
+    Contáctanos por WhatsApp
+  </a>
+</div>
+
+<!-- Mensaje de advertencia agregado -->
+<div style="margin: 3rem auto; max-width: 1100px; padding: 2rem; background: #2b0000; /* Fondo sólido sin transparencia */ border: 3px solid #ff0000; border-radius: 0px !important; text-align: left; box-shadow: 0 0 30px rgba(255,0,0,0.2);">
+  <p style="
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 1.8em;
+    margin-bottom: 1.5rem;
+    font-family: 'Cascadia Code', monospace;
+    text-shadow: 0 0 10px rgba(255,0,0,0.3);
+    text-align: center; /* Mantenemos el título centrado */
+  ">
+    Aclaración Importante:
+  </p>
+  <p style="
+    color: #ff0000;
+    margin-bottom: 2rem;
+    font-family: 'Cascadia Code', monospace;
+    font-size: 1.4em;
+    line-height: 1.5;
+    text-align: left; /* Alineación a la izquierda */
+  ">
+    No ofrecemos servicios de recuperación de cuentas (Google, redes sociales u otras plataformas). Este proceso solo puede gestionarlo directamente el <strong style="color: #ff7300; text-shadow: 0 0 10px rgba(0, 255, 42, 0.5);">servicio de soporte oficial</strong> de la empresa o plataforma vinculada a la cuenta.
+  </p>
+  <p style="
+    color: #f00606;
+    font-style: italic;
+    font-size: 1.2em;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    text-align: left; /* Alineación a la izquierda */
+  ">
+    Por seguridad y transparencia, evitamos riesgos asociados a acceso no autorizado, cuentas ajenas o dispositivos extraviados.
+    Agradecemos tu comprensión y te invitamos a contactar al soporte técnico correspondiente para recibir asistencia especializada.
+  </p>
+</div>
+
+<!-- Botón para descargar PDF en versión móvil -->
+<a href="pdfPreciosServitech.pdf" class="boton-descargar-pdf" style="
+  display: none; /* Ocultar por defecto */
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background: #55037a;
+  color: #66ff00;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Cascadia Code', monospace;
+  font-size: 1.2em;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(67, 1, 110, 0.5);
+  transition: background 0.3s ease, transform 0.2s ease;
+  max-width: 300px;
+">
+  Descargar PDF con nuestros precios
+</a>
+
+<style>
+  @media (max-width: 768px) {
+    .boton-descargar-pdf {
+      display: block !important; /* Mostrar solo en versión móvil */
+    }
+  }
+</style>
+    </div>
+  </header>
+  <main>
+    <div class="main-flex-container">
+      <!-- Title and subtitle removed as requested -->
+    </div>
+    <section class="about-section" style="display: flex; flex-wrap: wrap; justify-content: space-around; align-items: stretch; gap: 2rem;">
+      <div class="about-container" style="flex: 1; min-width: 300px; max-width: 1000px; width: 95%;">
+        <!-- Primero colocamos el recuadro de consultoría -->
+        <div class="recuadro-consultoria" style="width: 100%; max-width: 1200px; margin: 0 auto 2rem auto; padding: 2rem; background: rgba(0,224,255,0.05); border: 2px solid #00e0ff; border-radius: 0px !important; box-shadow: 0 0 20px rgba(0,224,255,0.2);">
+          <h2>¿Buscas soluciones digitales a medida?</h2>
+          <p>Ofrezco desarrollo profesional de aplicaciones, sistemas y software personalizado para empresas, emprendimientos y particulares.</p>
+          <p class="destacado">¿Tienes un proyecto en mente? <strong>¡Consúltanos primero!</strong></p>
+          <p>Transforma tu idea en una herramienta tecnológica eficiente y segura. Si tu proyecto está fuera de nuestro alcance, te asesoraremos gratuitamente para ayudarte a hacerlo realidad.</p>
+
+          <div class="botones-accion">
+            <a href="https://wa.me/5492944693956?text=Hola%2C%20quiero%20consultar%20la%20viabilidad%20de%20mi%20proyecto." class="boton consultar">
+              ¿Es viable mi proyecto?
+            </a>
+            
+            <a href="https://wa.me/5492944693956?text=Hola%2C%20quiero%20solicitar%20un%20proyecto." class="boton solicitar">
+              Solicitar proyecto
+            </a>
+          </div>
+
+          <p class="nota">* Analizaremos tu requerimiento y en menos de 24 horas te responderemos con una propuesta o alternativas</p>
+        </div>
+
+        <!-- Luego el recuadro de presentación -->
+        <div class="presentation-frame" style="
+    background: #000000 !important;
+    border: 2.5px solid #00e0ff; 
+    border-radius: 0px !important; 
+    box-shadow: 0 8px 32px 0 #00e0ff44, 0 0 0 4px #181c24 inset; 
+    padding: 1rem !important;
+    margin-top: 2rem; 
+    font-family: 'Cascadia Code', monospace !important;
+    position: relative; 
+    overflow: hidden;
+    max-width: 100% !important;">
+          <div class="frame-content" style="
+        color: #00e0ff;
+        font-family: 'Cascadia Code', monospace !important;
+        font-size: 30px !important;
+        line-height: 1.3 !important;
+        padding: 10px !important;
+        text-shadow: none !important;">
+            <h3 style="font-family: 'Press Start 2P', monospace !important;">Mensaje para usted</h3>
+            <p>
+              ¡Hola! Soy Elal, técnico en reparación de computadoras con 7 años de experiencia y actual estudiante de ciberseguridad. En ServiTech, no solo arreglo equipos, sino que promovo un uso responsable de la tecnología para evitar daños sociales y ambientales.
+            </p>
+            <h4>Mi compromiso</h4>
+            <ul>
+              <li>Hardware & Software: Reparaciones físicas, eliminación de virus, optimización y asesoría honesta.</li>
+              <li>Innovación continua: Estudio programación y ciberseguridad para ofrecer servicios avanzados (pronto: desarrollo de apps y protección de datos).</li>
+              <li>Intelectualismo riguroso: Soluciones basadas en datos y análisis crítico.</li>
+              <li>Ética inquebrantable: Cero compromisos con intereses corruptos o extractivistas.</li>
+            </ul>
+            <p>
+              ¡Únete a la revolución ética y tecnológica!
+            </p>
+            <p style="color: rgb(140, 0, 255);">
+                No tires, dona!!!!
+            </p>
+            <p>
+              Recibo chatarra tecnológica para reparar, reciclar o reinventar. ¡Evitemos contaminar y fomentemos la economía circular!
+            </p>
+            <h3 style="color:#d9ff00; text-shadow:0 0 8px #00e1ff52;">¿Eres un intelectual con valores?</h3>
+            <p>
+              Además de ServiTech, soy el creador de <strong style="color:#2bff00;">I.D.D.E.A.</strong> (Investigación, Debate y Desarrollo de Estudios Avanzados). Buscamos personas apasionadas por la tecnología, la ciencia, la justicia y la ética. No importa si eres experto en programación, finanzas, diseño, ingeniería, o simplemente tienes ganas de aprender y aportar con pensamiento crítico y compromiso social. Si te motiva este ambiente, únete a I.D.D.E.A.
+            </p>
+            <h3 style="color:#d9ff00; text-shadow:0 0 8px #00e1ff5d;">La Red I.D.D.E.A: Donde el intelectualismo sirve a la sociedad</h3>
+            <p>
+              Somos una organización autogestionada en construcción que fusiona conocimiento, acción y valores para resolver problemáticas de la zona y de todos los ambientes (social, ambiental, tecnológico, educativo, etc). No somos solo una red: somos un laboratorio de intelectuales éticos.
+            </p>
+            <h4 style="color:#e1ff00; text-shadow:0 0 8px #000000;">Funcionamiento</h4>
+            <p>
+              <strong>Centro de Coordinación Estratégica (CdCE):</strong> Analiza ideas y prioriza acciones bajo tres pilares:
+            </p>
+            <ul>
+              <li><strong>Intelectualismo riguroso:</strong> Soluciones basadas en datos y análisis crítico.</li>
+              <li><strong>Justicia social y ambiental:</strong> Priorizamos causas que protejan derechos humanos, derechos animales y ecosistemas.</li>
+              <li><strong>Ética inquebrantable:</strong> Cero compromisos con intereses corruptos o extractivistas.</li>
+            </ul>
+            <hr style="border: none; height: 2px; background: linear-gradient(90deg,#00e0ff 0%,#ff00ea 100%); margin: 2rem 0; box-shadow: 0 0 8px #00e0ff77;">
+            <div style="background: rgba(0,224,255,0.1); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #00e0ff; margin: 1rem 0;">
+              <p style="color: #fff; text-shadow: 0 0 15px #000000; font-size:0.85em;">
+                Grupos especializados: Abogados, científicos, educadores y técnicos son bienvenidos. No solicitamos títulos académicos, sino profesionalismo y compromiso. Para colaborar en nuestros proyectos autónomos, es fundamental compartir nuestra ética y valores.
+              </p>
+              
+              <p style="color: #fff; text-shadow: 0 0 15px #000000; margin-top: 1rem; font-size:0.85em;">
+                Ciclo de impacto: Las soluciones se implementan, se miden sus efectos y se retroalimenta al CdCE para evolucionar.
+              </p>
+            </div>
+            <h4 style="color:#48ff00; text-shadow:0 0 8px #000000; font-family: 'Press Start 2P', monospace !important;">¿Por qué somos diferentes?</h4>
+            <ul>
+              <li><strong>No somos neutrales:</strong> Rechazamos colaborar con entidades que violen nuestros principios. Detestamos la doble moralidad, la injusticia y la neutralidad.</li>
+              <li><strong>Formamos intelectuales:</strong> Capacitamos a miembros en pensamiento crítico, metodologías científicas y activismo ético.</li>
+              <li><strong>Acción con coherencia:</strong> Cada proyecto debe reflejar los valores de I.D.D.E.A; no aceptamos "soluciones" que perpetúen desigualdades.</li>
+            </ul>
+            <p>
+              ¿Te identificas? Buscamos personas que:
+            </p>
+            <ul>
+              <li>Conciban el conocimiento como una herramienta para promover la justicia y contribuir activamente al bienestar social/ambiental.</li>
+              <li>Rechacen el conformismo intelectual.</li>
+            </ul>
+            
+            <!-- Nuevo estilo para el mensaje de contacto -->
+            <div style="
+              margin-top: 3rem;
+              padding: 1.5rem;
+              background: rgba(76, 0, 255, 0.123);
+              border: 2px solid #4d00ff;
+              text-align: left;
+              box-shadow: 0 0 20px rgba(77, 0, 255, 0.2);
+              display: flex;
+              flex-direction: column;
+              gap: 1rem;
+            ">
+              <p style="
+                color: #4d00ff;
+                font-family: 'Press Start 2P', monospace;
+                font-size: 0.8em;
+                margin: 0;
+                text-shadow: 0 0 8px rgba(77, 0, 255, 0.3);
+              ">
+                Para más información o si desea contactar por este proyecto, escribe a:
+              </p>
+              <p onclick="copyEmail()" style="
+                color: #fff;
+                font-family: 'Cascadia Code', monospace;
+                font-size: 0.9em;
+                letter-spacing: 0.5px;
+                margin: 0;
+                text-shadow: 0 0 12px rgb(0, 0, 0);
+                word-break: break-all;
+                padding-left: 0.5rem;
+                cursor: pointer;
+                user-select: all;
+              ">
+                elal_chico@disroot.org
+                <span id="copyMessage" style="
+                  color: #4d00ff;
+                  font-size: 0.8em;
+                  opacity: 0;
+                  margin-left: 1rem;
+                  transition: opacity 0.3s;
+                ">¡Copiado!</span>
+              </p>
+            </div>
+
+            <script>
+              function copyEmail() {
+                const email = 'elal_chico@disroot.org';
+                navigator.clipboard.writeText(email).then(() => {
+                  const msg = document.getElementById('copyMessage');
+                  msg.style.opacity = '1';
+                  setTimeout(() => msg.style.opacity = '0', 2000);
+                });
+              }
+            </script>
+
+            <div style="position:absolute;bottom:0;right:0;left:0;height:8px;background:linear-gradient(90deg,#00e0ff 0%,#ff00ea 100%);box-shadow:0 0 16px #00e0ff99,0 0 8px #ff00ea99;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- WhatsApp container moved to header -->
+  </main>
+  <footer style="color: var(--text-dark); font-size: 0.9rem; letter-spacing: 1px;">
+  &copy; 2025 ServiTech. Todos los derechos reservados.
+</footer>
+  <!-- Import external scripts -->
+  <script src="./scripts/banner-text.js"></script>>
+  <script src="./scripts/terminal-animation.js"></script>>
+  <script src="./precios.js"></script>
+  <script>
+    // Animación de puntos de carga tipo terminal
+    let dots = document.getElementById('dots');    let dotCount = 0;    let loadingInterval = setInterval(()=>{      dotCount = (dotCount+1)%4;      dots.textContent = '.'.repeat(dotCount) + ' '.repeat(3-dotCount);
+    }, 350);
+    setTimeout(()=>{
+      document.getElementById('loading-animation').style.display='none';
+      clearInterval(loadingInterval);
+    },2000);
+
+    // Simulación de widget reducido y horizontal
+    function updateStatsWidget() {
+      var temp = (Math.random()*30+40).toFixed(1);
+      var ram = (Math.random()*60+30).toFixed(1);
+      var disk = (Math.random()*60+10).toFixed(1);
+      var netUp = (Math.random()*900+100).toFixed(0);
+      var netDown = (Math.random()*900+100).toFixed(0);
+      var gpu = (Math.random()*50+10).toFixed(1);
+      const numColor = "#e0e0e0";
+      document.getElementById('cpu-temp').textContent = temp + '°C';
+      document.getElementById('cpu-temp').style.color = numColor;
+      document.getElementById('ram-usage').textContent = ram + '%';
+      document.getElementById('ram-usage').style.color = numColor;
+      document.getElementById('disk-usage').textContent = disk + '%';
+      document.getElementById('disk-usage').style.color = numColor;
+      document.getElementById('net-up').textContent = '↑ ' + netUp + ' KB/s';
+      document.getElementById('net-up').style.color = numColor;
+      document.getElementById('net-down').textContent = '↓ ' + netDown + ' KB/s';
+      document.getElementById('net-down').style.color = numColor;
+      document.getElementById('gpu-usage').textContent = gpu + '%';
+      document.get
+    }
+    setInterval(updateStatsWidget, 2000);
+    updateStatsWidget();
+  </script>
+  <style>
+  @media (max-width: 768px) {
+    #tabla-precios {
+      margin-bottom: -40rem !important; /* Reducir aún más el margen inferior */
+    }
+    .boton-descargar-pdf {
+      margin-top: 0 !important; /* Eliminar margen superior del botón */
+    }
+  }
+  </style>
+</body>
+</html>

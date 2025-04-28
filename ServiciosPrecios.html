@@ -1,0 +1,631 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="generator" content="PhpSpreadsheet, https://github.com/PHPOffice/PhpSpreadsheet">
+    <meta name="company" content="Microsoft Corporation" />
+    <style type="text/css">
+      /* Quita o comenta la siguiente línea para evitar fondo blanco forzado */
+      /* html { font-family:Calibri, Arial, Helvetica, sans-serif; font-size:11pt; background-color:white } */
+      html { font-family:Calibri, Arial, Helvetica, sans-serif; font-size:11pt; }
+      a.comment-indicator:hover + div.comment { background:#ffd; position:absolute; display:block; border:1px solid black; padding:0.5em }
+      a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em }
+      div.comment { display:none }
+      table { border-collapse:collapse; page-break-after:always }
+      .gridlines td { border:2px solid #ffffff !important; }
+      .gridlines th { border:2px solid #ffffff !important; }
+      .b { text-align:center }
+      .e { text-align:center }
+      .f { text-align:right }
+      .inlineStr { text-align:left }
+      .n { text-align:right }
+      .s { text-align:left }
+      td.style0 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      th.style0 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      td.style1 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      th.style1 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      td.style2 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:14pt; background-color:#5983B0 }
+      th.style2 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:14pt; background-color:#5983B0 }
+      td.style3 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#000000; font-family:'Calibri'; font-size:10pt; background-color:#D4EA6B }
+      th.style3 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#000000; font-family:'Calibri'; font-size:10pt; background-color:#D4EA6B }
+      td.style4 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#000000; font-family:'Calibri'; font-size:10pt; background-color:#FF972F }
+      th.style4 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#000000; font-family:'Calibri'; font-size:10pt; background-color:#FF972F }
+      td.style5 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:10pt; background-color:#780373 }
+      th.style5 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:10pt; background-color:#780373 }
+      td.style6 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:14pt; background-color:white }
+      th.style6 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:14pt; background-color:white }
+      td.style7 { vertical-align:top; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#355269 }
+      th.style7 { vertical-align:top; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#355269 }
+      td.style8 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#127622 }
+      th.style8 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#127622 }
+      td.style9 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#395511 }
+      th.style9 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#395511 }
+      td.style10 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#861141 }
+      th.style10 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#861141 }
+      td.style11 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      th.style11 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      td.style12 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#355269 }
+      th.style12 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#355269 }
+      td.style13 { vertical-align:middle; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      th.style13 { vertical-align:middle; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      td.style14 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#355269 }
+      th.style14 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#355269 }
+      td.style15 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#000000 }
+      th.style15 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#000000 }
+      td.style16 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:13pt; background-color:#355269 }
+      th.style16 { vertical-align:middle; text-align:center; border-bottom:2px solid #e0e0e0 !important; border-top:2px solid #e0e0e0 !important; border-left:2px solid #e0e0e0 !important; border-right:2px solid #e0e0e0 !important; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:13pt; background-color:#355269 }
+      td.style17 { vertical-align:bottom; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#861141 }
+      th.style17 { vertical-align:bottom; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#FFFFFF; font-family:'Calibri'; font-size:11pt; background-color:#861141 }
+      td.style18 { vertical-align:bottom; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      th.style18 { vertical-align:bottom; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      td.style19 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      th.style19 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+      table.sheet0 col.col0 { width:175pt }        /* Servicio */
+      table.sheet0 col.col1 { width:75pt }         /* Local */
+      table.sheet0 col.col2 { width:75pt }         /* Domicilio */
+      table.sheet0 col.col3 { width:85pt }         /* Oficiales */
+      table.sheet0 tr { height:15pt }
+      table.sheet0 tr.row0 { height:36.85pt }
+      table.sheet0 tr.row1 { height:64.05pt }
+      table.sheet0 tr.row2 { height:19.3pt }
+      table.sheet0 tr.row3 { height:28.95pt }
+      table.sheet0 tr.row4 { height:23.7pt }
+      table.sheet0 tr.row5 { height:53.55pt }
+      table.sheet0 tr.row6 { height:26.5pt }
+      table.sheet0 tr.row7 { height:67.6pt }
+      table.sheet0 tr.row8 { height:15pt }
+      table.sheet0 tr.row9 { height:15pt }
+      table.sheet0 tr.row10 { height:15pt }
+      table.sheet0 tr.row11 { height:29pt }
+      table.sheet0 tr.row12 { height:16.65pt }
+      table.sheet0 tr.row13 { height:19.3pt }
+      table.sheet0 tr.row14 { height:19.3pt }
+      table.sheet0 tr.row15 { height:28.05pt }
+      table.sheet0 tr.row16 { height:18.4pt }
+      table.sheet0 tr.row17 { height:15.8pt }
+      table.sheet0 tr.row18 { height:15.8pt }
+      table.sheet0 tr.row19 { height:18.4pt }
+      table.sheet0 tr.row20 { height:20.15pt }
+      table.sheet0 tr.row21 { height:19.3pt }
+      table.sheet0 tr.row22 { height:18.4pt }
+      table.sheet0 tr.row23 { height:21.9pt }
+      table.sheet0 tr.row24 { height:20.15pt }
+      table.sheet0 tr.row25 { height:30.65pt }
+      table.sheet0 tr.row26 { height:15pt }
+      table.sheet0 tr.row27 { height:15pt }
+      table.sheet0 tr.row28 { height:15pt }
+      table.sheet0 tr.row29 { height:15pt }
+      table.sheet0 tr.row30 { height:15pt }
+      table.sheet0 tr.row31 { height:15pt }
+      table.sheet0 tr.row32 { height:15pt }
+      table.sheet0 tr.row33 { height:15pt }
+      table.sheet0 tr.row34 { height:15pt }
+      table.sheet0 tr.row35 { height:15pt }
+      table.sheet0 tr.row36 { height:15pt }
+      table.sheet0 tr.row37 { height:15pt }
+      table.sheet0 tr.row38 { height:15pt }
+      table.sheet0 tr.row39 { height:15pt }
+      table.sheet0 tr.row40 { height:15pt }
+      /* Estilo para integrar el cuadro a la página de tecnología */
+      table.sheet0 {
+        width: 92vw !important;                   /* Reducido de 98vw */
+        max-width: 1000px !important;             /* Reducido de 1200px */
+        min-width: 700px !important;              /* Reducido de 800px */
+        margin: 2.5rem auto 2.5rem auto;
+        font-size: 1.13em;
+        min-height: 900px;
+        background: #000000 !important; /* Fondo negro */
+        border-radius: 18px;
+        box-shadow: 0 8px 32px 0 rgba(0,0,0,0.22);
+        overflow: hidden;
+        border: 2.5px solid #00e0ff;
+        transition: box-shadow 0.3s;
+        position: relative;
+      }
+      /* Elimina el pseudo-elemento que generaba doble marco */
+      table.sheet0::before {
+        content: none !important;
+        display: none !important;
+      }
+      .gridlines td, .gridlines th {
+        border:2px solid #ffffff !important;
+        padding: 3px 2px !important;
+        white-space: nowrap; /* Evita que los números se corten */
+        font-size: 0.85em !important;
+      }
+      /* Encabezados con color destacado */
+      td.style2, th.style2 {
+        background: #ff00ea !important;
+        color: #181c24 !important;
+        border-color: #00e0ff !important;
+        letter-spacing: 1.2px;
+        font-weight: bold;
+        text-shadow: none;
+        border-bottom: 3px solid #00e0ff !important;
+        background: linear-gradient(90deg, #00e0ff 60%, #0a2233 100%) !important;
+        box-shadow: 0 2px 12px 0 #00e0ff33;
+      }
+      td.style3, th.style3 {
+        background-color: #eaffd0 !important;
+        color: #181c24 !important;
+        font-size: 10pt !important; /* Reducido de 12pt a 10pt */
+      }
+      td.style4, th.style4 {
+        background-color: #ffd7b3 !important;
+        color: #181c24 !important;
+        font-size: 10pt !important; /* Reducido de 12pt a 10pt */
+      }
+      td.style5, th.style5 {
+        background-color: #5e1e7a !important;
+        color: #fff !important;
+        font-size: 10pt !important; /* Reducido de 12pt a 10pt */
+      }
+      td.style7, th.style7,
+      td.style12, th.style12,
+      td.style14, th.style14,
+      td.style16, th.style16 {
+        background: #23272f !important;
+        color: #00e0ff !important;
+        border-color: #00e0ff !important;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      td.style8, th.style8 {
+        background-color: #1e7a5e !important;
+        color: #fff !important;
+      }
+      td.style9, th.style9 {
+        background-color: #3a5a2a !important;
+        color: #fff !important;
+      }
+      td.style10, th.style10 {
+        background-color: #7a1e3a !important;
+        color: #fff !important;
+      }
+      td.style15, th.style15 {
+        background-color: #23272f !important;
+        color: #fff !important;
+      }
+      /* Celdas vacías de precios: fondo negro permanente, sin hover ni opacidad */
+      td.null, th.null {
+        color: #b0b0b0 !important;
+        background: #000 !important;
+        opacity: 1 !important;
+        pointer-events: none;
+      }
+      table.sheet0 tbody tr:hover td.null,
+      table.sheet0 tbody tr:hover th.null {
+        background: #000 !important;
+        color: #b0b0b0 !important;
+      }
+      /* Bordes redondeados solo en las esquinas del cuadro */
+      table.sheet0 tr:first-child td:first-child { border-top-left-radius: 18px; }
+      table.sheet0 tr:first-child td:last-child { border-top-right-radius: 18px; }
+      table.sheet0 tr:last-child td:first-child { border-bottom-left-radius: 18px; }
+      table.sheet0 tr:last-child td:last-child { border-bottom-right-radius: 18px; }
+      /* Efecto hover tecnológico: color diferente para selección */
+      table.sheet0 tbody tr:hover td {
+        background: #003e52 !important;
+        color: #fff !important;
+        transition: background 0.2s, color 0.2s;
+      }
+      /* Evita hover en celdas vacías */
+      table.sheet0 tbody tr:hover td.null,
+      table.sheet0 tbody tr:hover th.null {
+        background: #111 !important;
+        color: #b0b0b0 !important;
+      }
+      /* Scrollbar personalizado para look tecnológico */
+      ::-webkit-scrollbar {
+        height: 6px;   /* Reducido de 10px a 6px */
+        width: 6px;    /* Reducido de 10px a 6px */
+        background: #181c24;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #00e0ff;
+        border-radius: 8px;
+      }
+      /* Números destacados con colores y animación */
+      td.n, th.n {
+        color: #00e0ff !important;
+        font-family: 'Cascadia Code', 'Consolas', monospace !important;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        transition: color 0.2s;
+        text-shadow: 0 1px 8px #00e0ff33;
+        background: linear-gradient(90deg, #0a2233 60%, #181c24 100%);
+        font-size: 9pt !important; /* Reducido de 10pt a 9pt */
+      }
+      /* Alterna color para números en columnas diferentes */
+      td.column2.n, th.column2.n {
+        color: #ffb300 !important;
+        text-shadow: 0 1px 8px #ffb30033;
+      }
+      td.column3.n, th.column3.n {
+        color: #00ff99 !important;
+        text-shadow: 0 1px 8px #00ff9933;
+      }
+      /* Celdas vacías de precios: gris claro */
+      td.null, th.null {
+        color: #b0b0b0 !important;
+        background: #23272f !important;
+      }
+      /* Efecto de "parpadeo" sutil en los números al pasar el mouse */
+      td.n:hover, th.n:hover {
+        color: #fff !important;
+        background: #003e52 !important;
+        animation: blinkNum 0.7s linear 1;
+      }
+      @keyframes blinkNum {
+        0% { color: #fff; }
+        50% { color: #00e0ff; }
+        100% { color: #fff; }
+      }
+      /* Fila de totales o resumen (si existiera) */
+      tr.total-row td, tr.total-row th {
+        background: #23272f !important;
+        color: #ffb300 !important;
+        font-size: 1.1em;
+        font-weight: bold;
+        border-top: 2.5px solid #00e0ff !important;
+      }
+      /* Pie de tabla con info cool */
+      tfoot td, tfoot th {
+        background: #0a2233 !important;
+        color: #00e0ff !important;
+        font-size: 0.98em;
+        text-align: right;
+        border-top: 2px solid #00e0ff !important;
+      }
+      /* Tooltip estilo terminal para info extra */
+      .cool-tooltip {
+        position: relative;
+        cursor: pointer;
+        border-bottom: 1px dashed #00e0ff;
+      }
+      .cool-tooltip:hover::after {
+        content: attr(data-tip);
+        position: absolute;
+        left: 0;
+        top: 1.5em;
+        background: #23272f;
+        color: #00e0ff;
+        padding: 0.4em 0.8em;
+        border-radius: 7px;
+        font-size: 0.95em;
+        white-space: pre;
+        box-shadow: 0 2px 12px #00e0ff33;
+        z-index: 10;
+      }
+      @media (max-width: 600px) {
+        html {
+          font-size: 10pt !important;
+        }
+        table.sheet0 {
+          width: 99vw !important;
+          min-width: unset !important;
+          max-width: 100vw !important;
+          font-size: 0.98em !important;
+          margin: 0.5rem 0.5vw 1.5rem 0.5vw !important;
+          border-radius: 10px !important;
+          box-shadow: none !important;
+        }
+        .info-box {
+          max-width: 98vw !important;
+          padding: 1em 0.5em !important;
+          font-size: 0.98em !important;
+          border-radius: 10px !important;
+        }
+        table.sheet0 tr,
+        table.sheet0 td,
+        table.sheet0 th {
+          height: auto !important;
+          padding: 0.35em 0.3em !important;
+          font-size: 0.98em !important;
+          word-break: break-word;
+        }
+        table.sheet0 col {
+          width: auto !important;
+        }
+        /* Reduce tamaño de tooltips */
+        .cool-tooltip:hover::after {
+          font-size: 0.90em !important;
+          max-width: 90vw !important;
+          left: 0 !important;
+          right: 0 !important;
+        }
+      }
+      /* Quitar bordes redondeados de la tabla */
+      table.sheet0 {
+        border-radius: 0px !important;
+      }
+
+      /* Quitar bordes redondeados de las esquinas */
+      table.sheet0 tr:first-child td:first-child { border-top-left-radius: 0px; }
+      table.sheet0 tr:first-child td:last-child { border-top-right-radius: 0px; }
+      table.sheet0 tr:last-child td:first-child { border-bottom-left-radius: 0px; }
+      table.sheet0 tr:last-child td:last-child { border-bottom-right-radius: 0px; }
+
+      /* Tooltip sin bordes redondeados */
+      .cool-tooltip:hover::after {
+        border-radius: 0px !important;
+      }
+
+      @media (max-width: 600px) {
+        table.sheet0 {
+          border-radius: 0px !important;
+        }
+        .info-box {
+          border-radius: 0px !important;
+        }
+      }
+    </style>
+    <style>
+        /* Estilos para la tabla en móviles */
+        @media (max-width: 768px) {
+            .sheet0 {
+                font-size: 14px !important;
+                width: 150% !important;
+                transform: scale(0.67) !important;
+                transform-origin: left top !important;
+            }
+            
+            body {
+                overflow-x: auto !important;
+                max-width: 100vw !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .column0 { min-width: 200px !important; }
+            .column1, .column2, .column3 { min-width: 100px !important; }
+
+            td {
+                white-space: normal !important;
+                padding: 8px !important;
+            }
+        }
+    </style>
+  </head>
+
+  <body style="background-color: #000000 !important; color: #ffffff; font-family: Arial, sans-serif;">
+<style>
+@page { margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; }
+body { margin: 0; padding: 0; }
+table.sheet0 {
+  width: 98vw;
+  max-width: 1400px;
+  min-width: 900px;
+  margin: 0 auto;
+  font-size: 1.15em;
+  min-height: 600px; /* Agrega esta línea para estirar hacia abajo */
+  background-color: #000000 !important; /* Fondo negro para la tabla */
+  color: #ffffff; /* Texto blanco */
+  border: none;
+}
+td, th {
+  background-color: #000000 !important; /* Fondo negro para celdas */
+  color: #ffffff !important; /* Texto blanco */
+  border: 1px solid #ffffff !important; /* Cambiado de #333333 a #ffffff */
+}
+</style>
+    <table border="0" cellpadding="0" cellspacing="0" id="sheet0" class="sheet0 gridlines">
+        <col class="col0">
+        <col class="col1">
+        <col class="col2">
+        <col class="col3">
+        <tbody>
+          <tr class="row0">
+            <td class="column0 style2 s">Servicio</td>
+            <td class="column1 style3 s">ServiTech<br>A. Local</td>
+            <td class="column2 style4 s">ServiTech<br>A. Domicilio</td>
+            <td class="column3 style5 s">Precios<br>Oficiales</td>
+          </tr>
+          
+          <!-- Nuevo servicio agregado aquí -->
+          <tr class="row1">
+            <td class="column0 style12 s">Instalación sistema operativo</td>
+            <td class="column1 style8 n">$13,000</td>
+            <td class="column2 style9 n">$16,000</td>
+            <td class="column3 style15 null"></td>
+          </tr>
+          <!-- Continúa con los servicios existentes -->
+          <tr class="row1">
+            <td class="column0 style7 s">Mantenimiento completo<br />
+(Cambio de pasta térmica, limpieza <br />
+de hardware y<br />
+Software, actualización de drivers,<br />
+&nbsp;Y diagnostico)</td>
+            <td class="column1 style8 n">$32,000</td>
+            <td class="column2 style9 n">$45,000</td>
+            <td class="column3 style10 n">$63,700</td>
+          </tr>
+          <tr class="row2">
+            <td class="column0 style12 s">Diagnóstico/revisión</td>
+            <td class="column1 style8 n">$8,900</td>
+            <td class="column2 style9 n">$12,000</td>
+            <td class="column3 style10 n">$9,266</td>
+          </tr>
+          <tr class="row3">
+            <td class="column0 style14 s">Eliminación de Malware <br />
+(virus)</td>
+            <td class="column1 style8 n">$25,899</td>
+            <td class="column2 style9 n">$35,549</td>
+            <td class="column3 style10 n">$41,699</td>
+          </tr>
+          <tr class="row4">
+            <td class="column0 style12 s">Cambio de pasta térmica</td>
+            <td class="column1 style8 n">$14,000</td>
+            <td class="column2 style9 n">$18,650</td>
+            <td class="column3 style15 null"></td>
+          </tr>
+          <tr class="row5">
+            <td class="column0 style14 s">Formateo e instalación de<br />
+&nbsp;Sistema Operativo <br />
++ paquetes esenciales <br />
+(word,LibreOffice, etc)</td>
+            <td class="column1 style8 n">$22,000</td>
+            <td class="column2 style9 n">$27,520</td>
+            <td class="column3 style15 null"></td>
+          </tr>
+          <tr class="row6">
+            <td class="column0 style14 s">Inicialización de equipo nuevo<br />
++ Programas básicos)</td>
+            <td class="column1 style8 n">$18,000</td>
+            <td class="column2 style9 n">$25,050</td>
+            <td class="column3 style10 n">$40,541</td>
+          </tr>
+          <tr class="row7">
+            <td class="column0 style14 s">Revisión y optimización de sistema operativo<br />
+( limpieza de archivos basura, actualización de<br />
+&nbsp;controladores, compatibilización de software y<br />
+&nbsp;ajustes personalizados para acelerar <br />
+computadoras lentificadas)</td>
+            <td class="column1 style8 n">$13,000</td>
+            <td class="column2 style9 n">$16,000</td>
+            <td class="column3 style15 null"></td>
+          </tr>
+          <tr class="row8">
+            <td class="column0 style12 s">Instalación de software x1 pack</td>
+            <td class="column1 style8 n">$12,000</td>
+            <td class="column2 style9 n">$14,000</td>
+            <td class="column3 style10 n">$20,850</td>
+          </tr>
+          <tr class="row9">
+            <td class="column0 style12 s">Instalación y configuración de drivers</td>
+            <td class="column1 style8 n">$14,000</td>
+            <td class="column2 style9 n">$18,000</td>
+            <td class="column3 style10 n">$20,850</td>
+          </tr>
+          <tr class="row10">
+            <td class="column0 style12 s">Instalación de juegos x1</td>
+            <td class="column1 style8 n">$8,000</td>
+            <td class="column2 style9 n">$12,000</td>
+            <td class="column3 style15 null"></td>
+          </tr>
+          <tr class="row11">
+            <td class="column0 style14 s">Reparación de inicio de Windows/<br />
+Restablecimiento de inicio de sesión.</td>
+            <td class="column1 style8 n">$20,000</td>
+            <td class="column2 style9 n">$29,500</td>
+            <td class="column3 style10 n">$40,804</td>
+          </tr>
+          <tr class="row12">
+            <td class="column0 style12 s">Armar PC básica desde 0</td>
+            <td class="column1 style8 n">$39,000</td>
+            <td class="column2 style9 n">$42,059</td>
+            <td class="column3 style10 n">$63,707</td>
+          </tr>
+          <tr class="row13">
+            <td class="column0 style12 s">Armar PC gamer desde 0</td>
+            <td class="column1 style8 n">$65,750</td>
+            <td class="column2 style9 n">$75,948</td>
+            <td class="column3 style10 n">$92,665</td>
+          </tr>
+          <tr class="row14">
+            <td class="column0 style12 s">Cambio de componentes hardware x1</td>
+            <td class="column1 style8 n">$12,000</td>
+            <td class="column2 style9 n">$15,325</td>
+            <td class="column3 style10 n">$20,850</td>
+          </tr>
+          <tr class="row15">
+            <td class="column0 style14 s">Limpieza de hardware <br />
++ Cambio de pasta térmica</td>
+            <td class="column1 style8 n">$18,500</td>
+            <td class="column2 style9 n">$26,940</td>
+            <td class="column3 style10 n">$28,958</td>
+          </tr>
+          <tr class="row16">
+            <td class="column0 style12 s">Recuperación de datos eliminados</td>
+            <td class="column1 style8 n">$50,000</td>
+            <td class="column2 style9 n">$75,989</td>
+            <td class="column3 style15 null"></td>
+          </tr>
+          <tr class="row17">
+            <td class="column0 style12 s">Eliminación irrecuperable de datos</td>
+            <td class="column1 style8 n">$50,000</td>
+            <td class="column2 style9 n">$75,989</td>
+            <td class="column3 style15 null"></td>
+          </tr>
+          <tr class="row18">
+            <td class="column0 style12 s">Cambio de Flex</td>
+            <td class="column1 style8 n">$18,000</td>
+            <td class="column2 style9 n">$20,000</td>
+            <td class="column3 style10 n">$40,541</td>
+          </tr>
+          <tr class="row19">
+            <td class="column0 style12 s">Cambio de pantalla</td>
+            <td class="column1 style8 n">$20,500</td>
+            <td class="column2 style9 n">$22,000</td>
+            <td class="column3 style10 n">$40,541</td>
+          </tr>
+          <tr class="row20">
+            <td class="column0 style12 s">Cambio de teclado NOTEBOOK</td>
+            <td class="column1 style8 n">$18,000</td>
+            <td class="column2 style9 n">$20,000</td>
+            <td class="column3 style10 n">$28,958</td>
+          </tr>
+          <tr class="row21">
+            <td class="column0 style12 s">Hard Reset tablets/celular</td>
+            <td class="column1 style8 n">$12,000</td>
+            <td class="column2 style9 n">$16,000</td>
+            <td class="column3 style10 n">$28,958</td>
+          </tr>
+          <tr class="row22">
+            <td class="column0 style12 s">Configuración Router/Extensor wifi</td>
+            <td class="column1 style15 null"></td>
+            <td class="column2 style9 n">$14,000</td>
+            <td class="column3 style10 n">$30,116</td>
+          </tr>
+          <tr class="row23">
+            <td class="column0 style12 s">Diagnóstico de vulnerabilidad</td>
+            <td class="column1 style8 n">$48,200</td>
+            <td class="column2 style9 n">$36,550</td>
+            <td class="column3 style15 null"></td>
+          </tr>
+          <tr class="row24">
+            <td class="column0 style12 s">Auditorías en ciberseguridad</td>
+            <td class="column1 style8 n">$57,987</td>
+            <td class="column2 style9 n">$62,200</td>
+            <td class="column3 style15 null"></td>
+          </tr>
+          <tr class="row25">
+            <td class="column0 style16 s">Visita a domicilio x 1 hs <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Emergencia)</td>
+            <td class="column1 style8 n style8" colspan="2">$14,899</td>
+            <td class="column3 style17 n">$46,332</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" style="text-align:right; background-color: rgba(0, 0, 0, 0.5); padding: 0;">
+              <span style="
+                color: #ff0000;
+                display: inline-block;
+                padding: 4px 15px;
+                margin: 5px;
+                text-shadow: 0 0 5px rgba(255,0,0,0.3);
+              ">* Todos los precios son estimativos y pueden variar según diagnóstico.</span>
+              <span></span>
+            </td>
+          </tr>
+        </tfoot>
+    </table>
+
+    <!-- Mensaje de recomendación agregado -->
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="ruta-del-pdf.pdf" download>
+        <span style="font-size: 1.2em;">📥</span> Descargar PDF con nuestros precios
+      </a>
+    </div>
+
+    <style>
+      @media (max-width: 768px) {
+        .recomendacion-container {
+          margin-top: 1rem !important;
+        }
+      }
+    </style>
+  </body>
+</html>

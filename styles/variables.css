@@ -1,0 +1,581 @@
+:root {
+  /* @tweakable Global loading animation visibility */
+  --loading-animation-display: none;
+
+  /* @tweakable Control the opacity of initial loading state */
+  --initial-load-opacity: 1;
+
+  /* @tweakable Duration of initial load fade-in effect */
+  --initial-load-transition-duration: 1s;
+
+  /* @tweakable Delay before content becomes fully visible */
+  --initial-load-delay: 0s;
+
+  /* @tweakable Primary background color for the entire page - exact hex color with full opacity */
+  --bg-dark: #031525;
+
+  /* @tweakable Background color alpha/opacity (0-1) - allows fine-tuning of background transparency */
+  --bg-dark-alpha: 1;
+
+  /* @tweakable Alternative background color for gradient or overlay effects */
+  --bg-dark-alt: #000000;
+
+  /* @tweakable Primary page background color with alpha control */
+  --page-bg-color: rgba(0, 0, 0, var(--bg-dark-alpha));
+
+  /* @tweakable Intensity of background noise effect */
+  --background-noise-intensity: 0.2;
+
+  /* @tweakable Scale of background noise pattern */
+  --background-noise-scale: 1.0;
+
+  /* @tweakable Speed of background noise animation */
+  --background-noise-animation-speed: 150s;
+
+  /* @tweakable Header and footer background color */
+  --bg-medium: #0a0a0a;
+
+  /* @tweakable Card background color */
+  --bg-card: #0a0a0a;
+
+  /* @tweakable Primary accent color for highlights and interactions */
+  --accent-primary: #01e0cc;
+
+  /* @tweakable Secondary accent color for subtle highlights */
+  --accent-secondary: #67fcff;
+
+  /* @tweakable Text colors */
+  --text-light: #eef2fa;
+  --text-medium: #bbd6f7;
+  --text-dark: #8c96a7;
+
+  /* @tweakable Shadow colors */
+  --shadow-color: #000000;
+  --shadow-light: #00000040;
+  --shadow-hover: #01e0cc38;
+
+  /* @tweakable Border color */
+  --border-color: #163e5b;
+
+  /* @tweakable Banner image scaling factor (1.0 = original size, values < 1 reduce size) */
+  --banner-scale: 0.95;
+
+  /* @tweakable Vertical banner margin adjustment */
+  --banner-margin-vertical: 0px;
+
+  /* @tweakable Banner border radius */
+  --banner-border-radius: 0px;
+
+  /* @tweakable Banner horizontal scale factor (1.0 = original width, values < 1 reduce width) */
+  --banner-width-scale: 0.98;
+
+  /* @tweakable Banner vertical scale factor (1.0 = original height, values < 1 reduce height) */
+  --banner-height-scale: 0.98;
+
+  /* @tweakable Horizontal offset for banner positioning (negative values move left, positive move right) */
+  --banner-horizontal-offset: 0px;
+
+  /* @tweakable Vertical offset for banner positioning (negative values move up, positive move down) */
+  --banner-vertical-offset: 2px;
+
+  /* @tweakable Space between header and banner */
+  --header-banner-spacing: 0px;
+
+  /* @tweakable Padding of the header */
+  --header-padding: 0px;
+
+  /* @tweakable Removes any potential margin on the header */
+  --header-margin: 0px;
+
+  /* @tweakable Price comparison background color */
+  --price-comparison-bg-color: #808080;
+
+  /* @tweakable Base font family for the entire page */
+  --base-font-family: 'Cascadia Code', monospace;
+
+  /* @tweakable Fallback font for browsers that don't support Cascadia Code */
+  --fallback-font-family: 'Montserrat', Arial, sans-serif;
+
+  /* @tweakable Font weight for body text */
+  --body-font-weight: 400;
+
+  /* @tweakable Font weight for headings and titles */
+  --heading-font-weight: 700;
+
+  /* @tweakable Base font size for the entire page */
+  --base-font-size: 16px;
+
+  /* @tweakable Line height for better readability */
+  --base-line-height: 1.6;
+
+  /* @tweakable Letter spacing for body text */
+  --body-letter-spacing: 0.5px;
+
+  /* @tweakable Letter spacing for headings */
+  --heading-letter-spacing: 1px;
+
+  /* @tweakable values for terminal animation */
+  --terminal-opacity: 0.85;
+  --terminal-width: 70%;
+  --typing-delay: 700;
+  --caret-color: #01e0cc;
+  --fade-delay: 3000;
+  --terminal-top-position: 20px;
+  --terminal-left-position: 20px;
+  --terminal-max-width: 350px;
+
+  /* @tweakable Red component of terminal text (0-255) */
+  --terminal-text-color-r: 0;
+  /* @tweakable Green component of terminal text (0-255) - increased for brightness */
+  --terminal-text-color-g: 200;
+  /* @tweakable Blue component of terminal text (0-255) */
+  --terminal-text-color-b: 17;
+
+  /* @tweakable Terminal text color opacity (0-1) - allows precise transparency control */
+  --terminal-text-color-opacity: 0.95;
+
+  /* @tweakable Intensity of text glow effect (0-1) */
+  --terminal-text-glow-intensity: 0.3;
+
+  /* @tweakable Glow color for terminal text - uses RGB with adjustable alpha */
+  --terminal-text-glow-color: rgba(0, 200, 17, 0.4);
+
+  /* @tweakable Matrix terminal background opacity (lower for more transparent look) */
+  --terminal-bg-opacity: 0.1;
+
+  /* @tweakable Matrix terminal background color */
+  --terminal-bg-color: #000000;
+
+  /* @tweakable Terminal cursor width in pixels */
+  --terminal-cursor-base-width: 12px;
+
+  /* @tweakable Terminal cursor base height */
+  --terminal-cursor-base-height: 20px;
+
+  /* @tweakable Terminal cursor thickness multiplier */
+  --terminal-cursor-thickness-multiplier: 1.5;
+
+  /* @tweakable Terminal cursor border radius */
+  --terminal-cursor-border-radius: 3px;
+
+  /* @tweakable Terminal cursor opacity */
+  --terminal-cursor-opacity: 1.0;
+
+  /* @tweakable Cursor blink animation speed */
+  --terminal-cursor-blink-speed: 500ms;
+
+  /* @tweakable Terminal cursor opacity when blinking */
+  --terminal-cursor-opacity-active: 1;
+
+  /* @tweakable Terminal cursor opacity when hidden */
+  --terminal-cursor-opacity-inactive: 0;
+
+  /* @tweakable Minimum height for the features section */
+  --features-section-min-height: 100px;
+
+  /* @tweakable Padding for the features grid container */
+  --features-grid-padding: 16px;
+
+  /* @tweakable Opacity for empty features grid */
+  --features-grid-opacity: 0.1;
+
+  /* @tweakable Terminal width as percentage of banner width (e.g. 50% for half) */
+  --terminal-width-percentage: 55%;
+
+  /* @tweakable Horizontal offset from the left edge of the banner (can be negative or positive) */
+  --terminal-horizontal-offset: 0%;
+
+  /* @tweakable Terminal's horizontal stretch percentage (how far it extends from the left) */
+  --terminal-horizontal-stretch: 60%;
+
+  /* @tweakable Adjust the top positioning of the terminal */
+  --terminal-vertical-position: 0%;
+
+  /* @tweakable Terminal background opacity */
+  --terminal-bg-opacity: 0.2;
+
+  /* @tweakable Terminal border radius */
+  --terminal-border-radius: 8px;
+
+  /* @tweakable Terminal internal padding */
+  --terminal-padding: 20px;
+
+  /* @tweakable Terminal border color */
+  --terminal-border-color: rgba(1, 224, 204, 0.1);
+
+  /* @tweakable Terminal font size - adjusts the base size of the terminal text */
+  --terminal-font-size: 1rem;
+
+  /* @tweakable Terminal line height - controls spacing between lines */
+  --terminal-line-height: 1.7;
+
+  /* @tweakable Pricing image width as a percentage of container */
+  --pricing-image-width: 100%;
+
+  /* @tweakable Pricing image maximum width in pixels */
+  --pricing-image-max-width: 800px;
+
+  /* @tweakable Pricing image border radius */
+  --pricing-image-border-radius: 12px;
+
+  /* @tweakable Adds bottom margin below the pricing image */
+  --pricing-image-margin-bottom: 32px;
+
+  /* @tweakable Pricing image position: static, fixed, or sticky */
+  --pricing-image-position: static;
+
+  /* @tweakable Top offset for sticky/fixed position (distance from top of viewport if sticky) */
+  --pricing-image-sticky-top: 120px;
+
+  /* @tweakable Z-index for the pricing image */
+  --pricing-image-z-index: 3;
+
+  /* @tweakable Pricing image opacity */
+  --pricing-image-opacity: 1;
+
+  /* @tweakable Pricing image box shadow */
+  --pricing-image-box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+  /* @tweakable Pricing image hover scale effect */
+  --pricing-image-hover-scale: 1.02;
+
+  /* @tweakable Pricing grid image width */
+  --pricing-grid-image-width: 100%;
+
+  /* @tweakable Pricing grid image maximum width */
+  --pricing-grid-image-max-width: 800px;
+
+  /* @tweakable Pricing grid image border radius */
+  --pricing-grid-image-border-radius: 12px;
+
+  /* @tweakable Pricing grid image opacity */
+  --pricing-grid-image-opacity: 0.95;
+
+  /* @tweakable Pricing grid image box shadow */
+  --pricing-grid-image-box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+  /* @tweakable Pricing grid image hover scale effect */
+  --pricing-grid-image-hover-scale: 1.02;
+
+  /* @tweakable Pricing grid image hover opacity */
+  --pricing-grid-image-hover-opacity: 1;
+
+  /* @tweakable Pricing grid image margin */
+  --pricing-grid-image-margin: 16px 0;
+
+  /* @tweakable Pricing grid image object fit */
+  --pricing-grid-image-object-fit: contain;
+
+  /* @tweakable Opacity of the pricing grid container */
+  --pricing-grid-container-opacity: 1;
+
+  /* @tweakable Overall brightness of the pricing image */
+  --pricing-image-brightness: 1.1;
+
+  /* @tweakable Contrast adjustment for the pricing image */
+  --pricing-image-contrast: 1.1;
+
+  /* @tweakable Overlay opacity that might be obscuring the image */
+  --pricing-image-overlay-opacity: 0;
+
+  /* @tweakable Background color behind the pricing image */
+  --pricing-image-bg-color: transparent;
+
+  /* @tweakable Horizontal padding around the pricing image */
+  --pricing-image-horizontal-padding: 0px;
+
+  /* @tweakable Vertical padding around the pricing image */
+  --pricing-image-vertical-padding: 0px;
+
+  /* @tweakable Pricing grid image overall scaling factor (1.0 = original size) */
+  --precios-image-scale: 1.0;
+
+  /* @tweakable Maximum width of the pricing image in pixels */
+  --precios-image-max-width: 1200px;
+
+  /* @tweakable Minimum width of the pricing image in pixels */
+  --precios-image-min-width: 400px;
+
+  /* @tweakable Vertical margin around the pricing image */
+  --precios-image-vertical-margin: 32px;
+
+  /* @tweakable Horizontal margin around the pricing image */
+  --precios-image-horizontal-margin: auto;
+
+  /* @tweakable Additional vertical padding for the features grid */
+  --pricing-grid-vertical-padding: 32px;
+
+  /* @tweakable Disable hover scale effect completely */
+  --pricing-grid-image-hover-scale: 1.0;
+
+  /* @tweakable Control image hover opacity transition */
+  --pricing-grid-image-hover-opacity: 1.0;
+
+  /* @tweakable Transition duration for any potential hover effects */
+  --pricing-grid-image-transition-duration: 0s;
+
+  /* @tweakable Disable any hover transformations */
+  --pricing-grid-image-hover-transform: none;
+
+  /* @tweakable Control the initial static image opacity */
+  --pricing-grid-image-static-opacity: 1.0;
+
+  /* @tweakable Disable hover box shadow changes */
+  --pricing-grid-image-hover-box-shadow: none;
+
+  /* @tweakable Controls how much space is below the precios image, above title */
+  --precios-image-margin-bottom: 64px;
+
+  /* @tweakable The static position of the precios image: "static", "relative", or "block" recommended */
+  --precios-image-position: static;
+
+  /* @tweakable The z-index of the precios image (should be < header z-index so it doesn't overlap title) */
+  --precios-image-z-index: 1;
+
+  /* @tweakable The border radius for the precios image */
+  --precios-image-border-radius: 12px;
+
+  /* @tweakable Controls whether the title area is visible at all */
+  --title-display: none;
+
+  /* @tweakable Vertical space above where the title would be */
+  --title-area-margin-top: 0px;
+
+  /* @tweakable Vertical space below where the title would be */
+  --title-area-margin-bottom: 0px;
+
+  /* @tweakable Z-index of the title area to control layering */
+  --title-area-z-index: -1;
+
+  /* @tweakable Base background opacity for the banner text (0.0 = fully transparent, 1.0 = fully opaque) */
+  --banner-text-base-opacity: 0.5;
+
+  /* @tweakable Background color for the banner text - uses rgba for precise opacity control */
+  --banner-text-bg-color: rgba(0, 0, 0, var(--banner-text-base-opacity));
+
+  /* @tweakable Blur effect for the semi-transparent background (in pixels) */
+  --banner-text-backdrop-blur: 4px;
+
+  /* @tweakable Banner text background transparency (0-1, lower values make it more transparent) */
+  --banner-text-bg-transparency: 0.7;
+
+  /* @tweakable Width of the banner text container as a percentage */
+  --banner-text-width: 85%;
+
+  /* @tweakable Maximum width of the banner text container */
+  --banner-text-max-width: 1000px;
+
+  /* @tweakable Horizontal margin for centering */
+  --banner-text-horizontal-margin: auto;
+
+  /* @tweakable Vertical margin above the banner text */
+  --banner-text-margin-top: 1cm;
+  /* @tweakable Vertical margin below the banner text */
+  --banner-text-margin-bottom: 0px;
+
+  /* @tweakable Padding inside the banner text container */
+  --banner-text-padding: 32px 40px;
+
+  /* @tweakable Border radius for rounded corners */
+  --banner-text-border-radius: 8px;
+
+  /* @tweakable Aspect ratio control for more rectangular shape */
+  --banner-text-aspect-ratio: auto;
+
+  /* @tweakable Horizontal alignment */
+  --banner-text-text-align: left;
+
+  /* @tweakable Line height for better readability */
+  --banner-text-line-height: 1.7;
+
+  /* @tweakable Letter spacing */
+  --banner-text-letter-spacing: 0.5px;
+
+  /* @tweakable Box shadow for depth */
+  --banner-text-box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+  /* @tweakable Border properties */
+  --banner-text-border: 1px solid rgba(1, 224, 204, 0.1);
+
+  /* @tweakable Link color */
+  --banner-text-link-color: #01e0cc;
+
+  /* @tweakable Link decoration */
+  --banner-text-link-decoration: none;
+
+  /* @tweakable Link hover color */
+  --banner-text-link-transition-duration: 0.3s;
+
+  /* @tweakable Link hover color */
+  --banner-text-link-hover-color: #67fcff;
+
+  /* @tweakable Link hover text decoration */
+  --banner-text-link-hover-decoration: underline;
+
+  /* @tweakable Controls the z-index of the banner text to manage layering */
+  --banner-text-z-index: 2;
+
+  /* @tweakable Fine-tune the positioning method (static, relative, absolute) */
+  --banner-text-position: relative;
+
+  /* @tweakable Adjustment for lifting or lowering the banner text */
+  --banner-text-lift-adjustment: -10px;
+
+  /* @tweakable Font size for the banner text */
+  --banner-text-font-size: 1.1rem;
+
+  /* @tweakable Global transition duration for smooth interactions */
+  --global-transition-duration: 0.3s;
+
+  /* @tweakable Global border radius for consistent design */
+  --global-border-radius: 8px;
+
+  /* @tweakable Overall width of the about section presentation frame */
+  --presentation-frame-width: 80%;
+
+  /* @tweakable Maximum width for the about section presentation frame */
+  --presentation-frame-max-width: 800px;
+
+  /* @tweakable Minimum width for the about section presentation frame */
+  --presentation-frame-min-width: 300px;
+
+  /* @tweakable Background color for the presentation frame */
+  --presentation-frame-bg-color: rgba(10, 10, 10, 0.8);
+
+  /* @tweakable Border color for the presentation frame */
+  --presentation-frame-border-color: rgba(1, 224, 204, 0.2);
+
+  /* @tweakable Border width for the presentation frame */
+  --presentation-frame-border-width: 1px;
+
+  /* @tweakable Border radius for the presentation frame */
+  --presentation-frame-border-radius: 12px;
+
+  /* @tweakable Box shadow for the presentation frame */
+  --presentation-frame-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+  /* @tweakable Height of the frame header */
+  --frame-header-height: 40px;
+
+  /* @tweakable Background color for the frame header */
+  --frame-header-bg-color: rgba(1, 224, 204, 0.1);
+
+  /* @tweakable Border bottom color for the frame header */
+  --frame-header-border-bottom-color: rgba(1, 224, 204, 0.2);
+
+  /* @tweakable Border bottom width for the frame header */
+  --frame-header-border-bottom-width: 1px;
+
+  /* @tweakable Text color for the frame title */
+  --frame-title-color: var(--text-light);
+
+  /* @tweakable Font size for the frame title */
+  --frame-title-font-size: 1.1rem;
+
+  /* @tweakable Font weight for the frame title */
+  --frame-title-font-weight: 600;
+
+  /* @tweakable Padding inside the frame content */
+  --frame-content-padding: 24px;
+
+  /* @tweakable Vertical gap between paragraphs and sections in frame content */
+  --frame-content-gap: 20px;
+
+  /* @tweakable Border radius for the frame content (matches frame radius) */
+  --frame-content-border-radius: var(--presentation-frame-border-radius);
+
+  /* @tweakable Frame control button size */
+  --frame-control-button-size: 10px;
+
+  /* @tweakable Frame control button spacing */
+  --frame-control-button-spacing: 8px;
+
+  /* @tweakable Frame control button colors (close, minimize, maximize) */
+  --frame-control-colors: #ff5f56, #ffbd2e, #27c93f;
+
+  /* @tweakable Text color for frame controls (usually subtle) */
+  --frame-control-text-color: rgba(255, 255, 255, 0.5);
+
+  /* @tweakable Padding for the frame header */
+  --frame-header-padding: 0 16px;
+
+  /* @tweakable Experience list item vertical gap */
+  --experience-list-item-gap: 16px;
+
+  /* @tweakable Experience list item default background color */
+  --experience-list-item-default-bg: rgba(1, 224, 204, 0.08);
+
+  /* @tweakable Experience list item border color */
+  --experience-list-item-border-color: rgba(1, 224, 204, 0.2);
+
+  /* @tweakable Experience list item border width */
+  --experience-list-item-border-width: 1px;
+
+  /* @tweakable Experience list item border style */
+  --experience-list-item-border-style: solid;
+
+  /* @tweakable Experience list item border radius */
+  --experience-list-item-border-radius: 8px;
+
+  /* @tweakable Experience list item padding */
+  --experience-list-item-padding: 12px 16px;
+
+  /* @tweakable Experience list item margin */
+  --experience-list-item-margin: 8px 0;
+
+  /* @tweakable Experience list item box shadow */
+  --experience-list-item-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* @tweakable Experience list item text color */
+  --experience-list-item-text-color: var(--text-medium);
+
+  /* @tweakable Experience list item hover background color */
+  --experience-list-item-hover-bg: rgba(1, 224, 204, 0.1);
+
+  /* @tweakable Experience list item hover border color */
+  --experience-list-item-hover-border: rgba(1, 224, 204, 0.4);
+
+  /* @tweakable Experience list item hover text color */
+  --experience-list-item-hover-text: var(--text-light);
+
+  /* @tweakable Experience list item transition properties (remove transform from transition) */
+  --experience-list-item-transition: all 0.3s ease;
+
+  /* @tweakable Experience list item hover transform (set to none to remove animation) */
+  --experience-list-item-hover-transform: none;
+
+  /* @tweakable Experience list item background gradient overlay */
+  --experience-list-item-gradient: linear-gradient(45deg, rgba(1, 224, 204, 0.05), rgba(103, 252, 255, 0.05));
+
+  /* @tweakable Experience list item background gradient opacity */
+  --experience-list-item-gradient-opacity: 0.5;
+
+  /* @tweakable Emoji size multiplier in list items */
+  --list-item-emoji-size-multiplier: 1.8;
+
+  /* @tweakable Emoji right margin */
+  --list-item-emoji-margin-right: 15px;
+
+  /* @tweakable Emoji container background color */
+  --emoji-container-bg-color: rgba(1, 224, 204, 0.15);
+
+  /* @tweakable Emoji container border radius */
+  --emoji-container-border-radius: 6px;
+
+  /* @tweakable Emoji container padding */
+  --emoji-container-padding: 8px;
+
+  /* @tweakable Emoji color */
+  --emoji-color: var(--accent-secondary);
+
+  /* @tweakable About section vertical padding */
+  --about-section-padding-vertical: 64px;
+
+  /* @tweakable About section horizontal padding */
+  --about-section-padding-horizontal: 24px;
+
+  /* @tweakable Border thickness for the pricing image */
+  --pricing-image-border-thickness: 5px;
+  /* @tweakable Border color for the pricing image */
+  --pricing-image-border-color: #ffffff;
+}

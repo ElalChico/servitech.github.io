@@ -1,0 +1,152 @@
+header {
+  background: var(--bg-medium);
+  text-align: center;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: var(--header-padding);
+  margin: var(--header-margin);
+}
+
+.banner-container {
+  /* @tweakable Flexbox display mode */
+  --pricing-image-display: flex;
+
+  /* @tweakable Flex direction for layout */
+  --pricing-image-flex-direction: column;
+
+  /* @tweakable Alignment of flex items */
+  --pricing-image-align-items: center;
+
+  /* @tweakable Justification of flex items */
+  --pricing-image-justify-content: center;
+
+  /* @tweakable Background color for the banner container */
+  background-color: rgb(1, 19, 33);
+
+  /* @tweakable Vertical gap between elements inside the banner container */
+  --banner-container-gap: 32px;
+
+
+  display: var(--pricing-image-display);
+  flex-direction: var(--pricing-image-flex-direction);
+  align-items: var(--pricing-image-align-items);
+  justify-content: var(--pricing-image-justify-content);
+  gap: var(--banner-container-gap); /* Apply gap between elements */
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: var(--main-flex-container-max-width, 900px);
+  margin: var(--main-flex-container-margin, 32px auto 48px auto);
+  padding: var(--main-flex-container-padding, 0 24px);
+  gap: var(--main-flex-container-gap, 16px);
+  width: var(--main-flex-container-width, 100%);
+  display: var(--title-display, flex);
+  margin-top: var(--title-area-margin-top);
+  margin-bottom: var(--title-area-margin-bottom);
+  z-index: var(--title-area-z-index);
+}
+
+.pricing-grid-image.below-banner {
+  width: auto;
+  max-width: none;
+  height: auto;
+  margin: 0 auto;
+
+  width: auto;
+  max-width: var(--precios-image-max-width);
+  min-width: var(--precios-image-min-width);
+  transform: scale(var(--precios-image-scale));
+  /* Removed direct margin-top/bottom, using gap on parent banner-container */
+  margin: 0 auto;
+  border-radius: var(--precios-image-border-radius);
+  position: var(--precios-image-position);
+  z-index: var(--precios-image-z-index);
+  display: block;
+  object-fit: contain;
+  box-shadow: var(--pricing-grid-image-box-shadow);
+  overflow: visible;
+
+  /* @tweakable Border thickness for the pricing image */
+  --pricing-image-border-thickness: 5px;
+  /* @tweakable Border color for the pricing image */
+  --pricing-image-border-color: #ffffff;
+
+  border: var(--pricing-image-border-thickness) solid var(--pricing-image-border-color);
+
+  &::before, &::after {
+    content: none;
+  }
+}
+
+.about-section {
+  /* @tweakable About section container display mode */
+  --about-section-display: flex;
+
+  /* @tweakable Justify content for about section */
+  --about-section-justify-content: center;
+
+  /* @tweakable Align items for about section */
+  --about-section-align-items: center;
+
+  /* @tweakable Vertical padding for about section */
+  --about-section-padding-vertical: 64px;
+
+  /* @tweakable Horizontal padding for about section */
+  --about-section-padding-horizontal: 24px;
+
+  /* @tweakable Background color for the about section */
+  --about-section-bg-color: rgb(1, 19, 33);
+
+  background-color: var(--about-section-bg-color);
+
+  display: var(--about-section-display);
+  justify-content: var(--about-section-justify-content);
+  align-items: var(--about-section-align-items);
+  padding: var(--about-section-padding-vertical) var(--about-section-padding-horizontal);
+  position: relative;
+  z-index: 0;
+}
+
+.about-container {
+  /* @tweakable About container width */
+  --about-container-width: 100%;
+
+  /* @tweakable Maximum width for about container */
+  --about-container-max-width: 900px;
+
+  /* @tweakable Flex layout for about container */
+  --about-container-display: flex;
+
+  /* @tweakable Flex direction for about container */
+  --about-container-flex-direction: column;
+
+  width: var(--about-container-width);
+  max-width: var(--about-container-max-width);
+  display: var(--about-container-display);
+  flex-direction: var(--about-container-flex-direction);
+  gap: 0;
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px 0;
+  text-align: center;
+  color: var(--text-dark);
+  background: var(--bg-medium);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  border-top: 1.5px solid var(--border-color);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}

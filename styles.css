@@ -1,0 +1,36 @@
+/* Estilos para el modal y project-info */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.project-info {
+    color: #b0c4de;
+}
+
+.project-info h2 {
+    color: #87ceeb;
+}
+
+.project-info p {
+    color: #d3d3d3;
+}
+
+.project-info .note {
+    color: #a9a9a9;
+}
